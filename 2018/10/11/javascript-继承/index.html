@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -83,7 +82,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>标签 | 前端学习 - 前端修行之路-无与为乐者</title>
+    <title>javascript 继承 | 前端学习 - 前端修行之路-无与为乐者</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -106,7 +105,7 @@
         
         <li role="menuitem"><a href="/categories/">分类</a></li>
         
-        <li role="menuitem"><a href="/tags/" class="current">标签</a></li>
+        <li role="menuitem"><a href="/tags/">标签</a></li>
         
         <li role="menuitem"><a href="/about/">关于</a></li>
         
@@ -121,23 +120,207 @@
         <div class="main-container">
           <div class="content">
             
-<div id="tags" class="tags page">
-  <article class="article post card animate">
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/11/javascript-继承/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="Wang Li">
+       <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="前端学习">
+      </span>
+    </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">标签</h1>
-    </header>
-    <main class="post-main">
-      <h2 class="page-counter">
+      <h1 class="post-title" itemprop="name headline">javascript 继承</h1>
+      <div class="post-meta">
         
-        你已经创建了 9 个标签！
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T01:15:05+08:00">2018-10-11 01:15:05</time></span>
+        </span>
         
-      </h2>
-      <div class="tags-cloud">
-        <a href="/tags/Call-Apply/" style="font-size: 16px; color: #777">Call/Apply</a> <a href="/tags/DOM/" style="font-size: 24px; color: #444">DOM</a> <a href="/tags/JS基础/" style="font-size: 32px; color: #111">JS基础</a> <a href="/tags/css基础/" style="font-size: 16px; color: #777">css基础</a> <a href="/tags/javascript继承/" style="font-size: 16px; color: #777">javascript继承</a> <a href="/tags/原型、原型链/" style="font-size: 16px; color: #777">原型、原型链</a> <a href="/tags/基础知识/" style="font-size: 16px; color: #777">基础知识</a> <a href="/tags/对象/" style="font-size: 16px; color: #777">对象</a> <a href="/tags/闭包/" style="font-size: 16px; color: #777">闭包</a>
+        
+        
+        
+        
       </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p></p><p>1、传统形式—&gt;原型链<br>缺点：过多的继承没用的属性</p><p></p>
+<pre><code class="lang-javascript">    Grand.prototype.latsName = &#39;Wang&#39;;
+    function Grand() {
+    }
+    var grand = new Grand();
+    Father.prototype = grand;
+    function Father() {
+        this.name = &quot;Cyy&quot;;
+    }
+    var father = new Father();
+    Son.prototype = father;
+    function Son() {
+        this.hobbit = &#39;smoke&#39;;
+    }
+    var son = new Son();
+</code></pre>
+<p>2、借用构造函数<br>缺点：1.不能继承借用构造函数的原型2.每次构造函数都要多走一个函数</p>
+<pre><code class="lang-javascript">    function Person(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+    function Student(name, age, sex, tel, grade) {
+        Person.call(this,name, age, sex);
+        this.tel = tel;
+        this.grade = grade;
+    }
+    var person = new Student(&#39;wang&#39;, 18, &#39;male&#39;, 139, 2018);
+</code></pre>
+<p>3、共享原型<br>缺点：不能随便改动自己的原型</p>
+<pre><code class="lang-javascript">    Father.prototype.lastName = &#39;Wang&#39;;
+
+    function Father() {
+
+    }
+
+    function Son() {
+
+    }
+
+    function inherit(Target, Origin) {
+        Target.prototype = Origin.prototype;
+    }
+
+    // Son.prototype = Father.prototype;
+    inherit(Son, Father)
+    var son = new Son();
+</code></pre>
+<p>4、圣杯模式</p>
+<pre><code class="lang-javascript">    Father.prototype.lastName = &#39;Wang&#39;;
+
+    function Father() {
+
+    }
+
+    function Son() {
+
+    }
+
+    function inherit(Target, Origin) {
+        Target.prototype = Origin.prototype;
+
+        function F() {
+            F.prototype = Father.prototype;
+            Target.prototype = new F()
+            Target.prototype.constructor = Target;
+            Target.prototype.uber = Origin.prototype;
+        }
+    }
+
+    inherit(Son, Father)
+    var son = new Son();
+    var father = new Father();
+</code></pre>
+
     </main>
-    <footer class="post-footer"></footer>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/javascript继承/" rel="tag"><i class="fas fa-tags"></i>javascript继承</a>
+        
+      </div>
+      
+    </footer>
   </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.jpg" alt="微信支付"/>
+      <span>微信支付</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.jpg" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2018/10/11/javascript-Call-Apply/" rel="next" title="javascript Call/Apply"><i class="fas fa-angle-left"></i><span class="nav-title">javascript Call/Apply</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div class="commentjs" id="comment-thread"></div>
+  <link rel="stylesheet" href="/css/commentjs.css">
+  <script defer type="text/javascript" src="/js/marked.min.js"></script>
+  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script defer type="text/javascript" src="/js/commentjs.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    getComments({
+      "type": "",
+      "user": "",
+      "repo": "",
+      "client_id": "",
+      "client_secret": "",
+      "no_comment": "这个页面还没有评论，现在就去评论吧！",
+      "go_to_comment": "去评论",
+      "issue_title": "javascript 继承",
+      "btn_class": "button",
+      "comments_target": "#comment-thread"
+    });
+    marked.setOptions({
+      "highlight": function (code, lang) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    function mark() {
+      var markdowns = document.getElementsByClassName("markdown");
+      for (var i = 0; i < markdowns.length; ++i){
+        if (markdowns[i].innerHTML) {
+          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+        }
+      }
+    }
+    window.addEventListener("DOMContentLoaded", mark, false);
+    window.addEventListener("load", mark, false);
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
 </div>
 
           </div>
@@ -195,6 +378,11 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+    
+    
+    
     
     
     <hr>
@@ -268,5 +456,3 @@
 
   </body>
 </html>
-
-

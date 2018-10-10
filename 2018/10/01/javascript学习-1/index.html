@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -83,7 +82,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>标签 | 前端学习 - 前端修行之路-无与为乐者</title>
+    <title>javascript学习(1) | 前端学习 - 前端修行之路-无与为乐者</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -106,7 +105,7 @@
         
         <li role="menuitem"><a href="/categories/">分类</a></li>
         
-        <li role="menuitem"><a href="/tags/" class="current">标签</a></li>
+        <li role="menuitem"><a href="/tags/">标签</a></li>
         
         <li role="menuitem"><a href="/about/">关于</a></li>
         
@@ -121,23 +120,80 @@
         <div class="main-container">
           <div class="content">
             
-<div id="tags" class="tags page">
+<div id="page" class="page">
   <article class="article post card animate">
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">标签</h1>
+      <h1 class="post-title" itemprop="name headline">
+        <span>javascript学习(1)</span>
+      </h1>
     </header>
     <main class="post-main">
-      <h2 class="page-counter">
-        
-        你已经创建了 9 个标签！
-        
-      </h2>
-      <div class="tags-cloud">
-        <a href="/tags/Call-Apply/" style="font-size: 16px; color: #777">Call/Apply</a> <a href="/tags/DOM/" style="font-size: 24px; color: #444">DOM</a> <a href="/tags/JS基础/" style="font-size: 32px; color: #111">JS基础</a> <a href="/tags/css基础/" style="font-size: 16px; color: #777">css基础</a> <a href="/tags/javascript继承/" style="font-size: 16px; color: #777">javascript继承</a> <a href="/tags/原型、原型链/" style="font-size: 16px; color: #777">原型、原型链</a> <a href="/tags/基础知识/" style="font-size: 16px; color: #777">基础知识</a> <a href="/tags/对象/" style="font-size: 16px; color: #777">对象</a> <a href="/tags/闭包/" style="font-size: 16px; color: #777">闭包</a>
-      </div>
+      <h6 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h6><p>JavaScript负责页面中的的行为。<br>它是一门运行在浏览器端的脚本语言。<br>JS的编写的位置<br>1.可以编写到标签的指定属性中<br><figure class="hljs highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"alert('hello');"</span>&gt;</span>我是按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:alert('aaa');"</span>&gt;</span>超链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>2.可以编写到script标签中<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"><span class="comment">//编写js代码</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>3.可以将代码编写到外部的js文件中，然后通过标签将其引入<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"文件路径"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>输出语句<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">"要输出的内容"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>该语句会在浏览器窗口中弹出一个警告框<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">"要输出的内容"</span>);</span><br></pre></td></tr></table></figure></p>
+<p> 该内容将会被写到body标签中，并在页面中显示<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"要输出的内容"</span>);</span><br></pre></td></tr></table></figure></p>
+<p> 该内容会被写到开发者工具的控制台中<br>基本的语法<br>注释<br>单行注释<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注释内容</span></span><br></pre></td></tr></table></figure></p>
+<p>多行注释<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/*</span></span><br><span class="line"><span class="comment">注释内容</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure></p>
+<p>JS严格区分大小写<br>JS中每条语句以分号(;)结尾<br>JS中会自动忽略多个空格和换行，所以我们可以利用空格和换行对代码进行格式化。</p>
+<p>字面量和变量<br>字面量<br>字面量实际上就是一些固定的值，比如 <code>1 2 3 4 true false null NaN &quot;hello&quot;</code><br>字面量都是不可以改变的。<br>由于字面量不是很方便使用，所以在JS中很少直接使用字面量<br>变量<br>变量可以用来保存字面量，并且可以保存任意的字面量<br>一般都是通过变量来使用字面量，而不直接使用字面量，而且也可以通过变量来对字面量进行一个描述<br>声明变量<br>使用var关键字来声明一个变量<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="keyword">var</span> b;</span><br><span class="line"><span class="keyword">var</span> c; 为变量赋值</span><br><span class="line">a = <span class="number">1</span>;</span><br><span class="line">b = <span class="number">2</span>;</span><br><span class="line">c = <span class="number">3</span>;</span><br></pre></td></tr></table></figure></p>
+<p>声明和赋值同时进行<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d = <span class="number">456</span>;</span><br><span class="line"><span class="keyword">var</span> e = <span class="number">789</span>; - 标识符</span><br></pre></td></tr></table></figure></p>
+<p>在JS中所有的可以自主命名的内容，都可以认为是一个标识符，<br>是标识符就应该遵守标识符的规范。<br> 比如：变量名、函数名、属性名<br> 规范：<br>1.标识符中可以含有字母、数字、_、$<br>2.标识符不能以数字开头<br>3.标识符不能是JS中的关键字和保留字<br>4.标识符一般采用驼峰命名法<code>xxxYyyZzz</code></p>
+
     </main>
     <footer class="post-footer"></footer>
   </article>
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div class="commentjs" id="comment-thread"></div>
+  <link rel="stylesheet" href="/css/commentjs.css">
+  <script defer type="text/javascript" src="/js/marked.min.js"></script>
+  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script defer type="text/javascript" src="/js/commentjs.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    getComments({
+      "type": "",
+      "user": "",
+      "repo": "",
+      "client_id": "",
+      "client_secret": "",
+      "no_comment": "这个页面还没有评论，现在就去评论吧！",
+      "go_to_comment": "去评论",
+      "issue_title": "javascript学习(1)",
+      "btn_class": "button",
+      "comments_target": "#comment-thread"
+    });
+    marked.setOptions({
+      "highlight": function (code, lang) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    function mark() {
+      var markdowns = document.getElementsByClassName("markdown");
+      for (var i = 0; i < markdowns.length; ++i){
+        if (markdowns[i].innerHTML) {
+          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+        }
+      }
+    }
+    window.addEventListener("DOMContentLoaded", mark, false);
+    window.addEventListener("load", mark, false);
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
 </div>
 
           </div>
@@ -195,6 +251,17 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#JavaScript"><span class="toc-text">JavaScript</span></a></li></ol></div>
+    </div>
+    
     
     
     <hr>
@@ -268,5 +335,3 @@
 
   </body>
 </html>
-
-

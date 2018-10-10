@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="前端学习" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>CSS学习 | 前端学习 - 前端修行之路-无与为乐者</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">前端学习</a></h1>
+        <h2 class="subtitle">前端修行之路-无与为乐者</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/">首页</a></li>
+        
+        <li role="menuitem"><a href="/archives/">归档</a></li>
+        
+        <li role="menuitem"><a href="/categories/">分类</a></li>
+        
+        <li role="menuitem"><a href="/tags/">标签</a></li>
+        
+        <li role="menuitem"><a href="/about/">关于</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/11/CSS学习/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="Wang Li">
+       <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="前端学习">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">CSS学习</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T00:00:24+08:00">2018-10-11 00:00:24</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/css/" itemprop="url" rel="index"><span itemprop="name">css</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h3 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h3><ul>
+<li>所有的元素默认情况下都是在文档流中存在的</li>
+<li>文档流是网页的最底层</li>
+<li>元素在文档流中的特点：</li>
+<li>块元素<br>1.默认宽度是父元素的全部<br>2.默认高度被内容（子元素）撑开<br>3.在页面中自上而下垂直排列</li>
+<li>内联元素<br>1.默认高度和宽度都被内容撑开<br>2.在页面中自左向右水平排列，如果一行不足以容下所有的元素<br>则换到下一行继续从左向右</li>
+</ul>
+<h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><ul>
+<li>使用<code>float</code>来设置元素的浮动</li>
+<li>可选值：<br><code>none</code> 默认值，元素不浮动，就在文档流中<br><code>left</code> 元素向页面的左侧浮动<br><code>right</code> 元素向页面的右侧浮动</li>
+<li><p>浮动特点：<br>1.元素设置浮动以后，会完全脱离文档流，并向页面的左上或右上浮动。<br>直到遇到父元素的边框或其他的父元素时则停止浮动。<br>2.如果浮动元素上边是一个没有浮动的块元素，元素不会超过该块元素。<br>3.浮动元素的浮动位置不能超过他上边浮动的兄弟元素，最多一边齐<br>4.浮动元素不会覆盖文字，文字会围绕在浮动元素的周围，所以可以通过浮动来实现文字环绕图片的效果。</p>
+</li>
+<li><p>浮动以后元素会完全脱离文档流，脱离文档流以后元素会具有如下特点：<br>1.块元素不独占一行<br>2.块元素的宽度和高度都被内容撑开<br>3.元素不在文档流占用位置<br>4.内联元素会变成块元素</p>
+</li>
+<li><p>高度塌陷</p>
+</li>
+<li>在文档流中元素的高度默认被子元素撑开，当子元素浮动时，子元素会脱离文档流，<br>此时将不能撑起父元素的高度，会导致父元素的高度塌陷。父元素高度塌陷会导致其他元素的位置上移，导致页面的布局混乱。</li>
+<li>可以通过开启元素的BFC来处理高度塌陷的问题。</li>
+<li>BFC叫做Block Formatting Context</li>
+<li>它是一个隐含属性，默认情况是关闭，当开启以后元素会具有如下的特性：<br>1.父元素的垂直外边距不会和子元素重叠<br>2.开启BFC的元素不会被浮动元素覆盖<br>3.父元素可以包含浮动的子元素 <strong>**</strong></li>
+<li>开启BFC的方式很多：<br>1.设置元素浮动<br>2.设置元素绝对定位<br>3.设置元素为<code>inline-block</code><br>4.将元素的overflow设置为一个非默认值</li>
+<li>一般我们采取副作用比较小的方式<br><code>overflow:hidden</code>;</li>
+</ul>
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><ul>
+<li>通过定位可以将元素摆放到页面的任意位置</li>
+<li>使用position来设置元素的定位</li>
+<li>可选值：</li>
+<li>static 默认值 元素不开启定位</li>
+<li>relative 开启元素的相对定位</li>
+<li>absolute 开启元素的绝对定位</li>
+<li><p>fixed 开启元素的固定定位</p>
+</li>
+<li><p>相对定位<br>1.相对于元素自身在文档流中的位置进行定位<br>2.相对定位的元素不会脱离文档流，定位元素的性质不会改变，块还是块，内联还是内联<br>3.如果不设置偏移量，元素不会发生任何的变化<br>4.会提升元素的层级</p>
+</li>
+<li><p>绝对定位<br>1.相对于离它最近的开启了定位的祖先元素进行定位，如果祖先元素都没有开启定位则相对于浏览器窗口进行定位。<br>2.绝对定位会使元素完全脱离文档流，会改变元素的性质，内联变成块元素，块元素的宽度被内容撑开<br>3.绝对定位的元素如果不设置偏移量，元素的位置不会发生变化<br>4.会提升元素的层级</p>
+</li>
+<li><p>固定定位</p>
+</li>
+<li>固定定位也是一种绝对定位，它的大部分特点都和绝对定位是相同的。</li>
+<li>不同的是：</li>
+<li>固定定位永远相对于浏览器窗口进行定位</li>
+<li><p>固定定位会固定在浏览器的指定的位置，不会随页面一起滚动</p>
+</li>
+<li><p>偏移量</p>
+</li>
+<li><p>当元素开启了定位以后，可以通过四个偏移量来设置元素的位置<br><code>top</code>：相对于定位位置的顶部的偏移量<br><code>bottom</code>：相对于定位位置的底部的偏移量<br><code>left</code>：相对于定位位置的左侧的偏移量<br><code>right</code>：相对于定位位置的右侧的偏移量</p>
+</li>
+<li><p>一般只需要使用两个值即可给元素进行定位<br><code>top left</code><br><code>top right</code><br><code>bottom left</code><br><code>bottom right</code></p>
+</li>
+<li><p>偏移量也可以指定一个负值，如果是负值则元素会向相反的方向移动</p>
+</li>
+<li>层级</li>
+<li><p>当元素开启定位以后，可以通过<code>z-index</code>来设置层级，<br>它需要一个正整数作为参数，值越大层级越高，层级越高越优先显示<br>如果层级一样，则后边的会盖住前边的，父元素永远都不会盖住子元素。</p>
+</li>
+<li><p>文档流 &lt; 浮动 &lt; 定位 </p>
+</li>
+<li><p>元素的透明<br>使用<code>opacity</code>来设置元素的透明度</p>
+</li>
+<li>需要一个0-1之间的值</li>
+<li>0 表示完全透明</li>
+<li><p>1 表示完全不透明</p>
+<p>IE8及以下的浏览器不支持该样式，需要使用如下方式来设置<br>filter:alpha(opacity=透明度);</p>
+</li>
+<li>需要一个0-100之间的值</li>
+<li>0 表示完全透明</li>
+<li>100 表示完全不透明</li>
+</ul>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><ul>
+<li>在网页中可以通过表格来表示一些格式化的数据</li>
+<li>表格相关的标签</li>
+<li><code>&lt;table&gt;</code>用来创建一个表格</li>
+<li><code>&lt;tr&gt;</code> 表示表格中的一行</li>
+<li><code>&lt;th&gt;</code> 表示表头中的单元格</li>
+<li><code>&lt;td&gt;</code> 表示表格中的单元格</li>
+<li>属性：<br><code>colspan</code> 横向的合并单元格<br><code>rowspan</code> 纵向的合并单元格</li>
+<li><p>例子：</p>
+<p><code>&lt;table&gt;</code><br><code>&lt;tr&gt;</code><br><code>&lt;td&gt;&lt;/td&gt;</code><br><code>&lt;td&gt;&lt;/td&gt;</code><br><code>&lt;/tr&gt;</code><br><code>&lt;tr&gt;</code><br><code>&lt;td&gt;&lt;/td&gt;</code><br><code>&lt;td&gt;&lt;/td&gt;</code><br><code>&lt;/tr&gt;</code><br><code>&lt;/table&gt;</code></p>
+</li>
+</ul>
+<p>长表格</p>
+<ul>
+<li><code>&lt;thead&gt;</code> 表格的头部</li>
+<li><code>&lt;tbody&gt;</code> 表格的主体</li>
+<li>注意：如果表格中没有写thead tbody tfoot，浏览器会自动向table中添加一个tbody<br>并且将所有的tr都放到tbody中，tr是tbody的子元素，不是table的子元素</li>
+<li><code>&lt;tfoot&gt;</code> 表格的底部</li>
+</ul>
+<h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><ul>
+<li>表单可以将用户的信息提交到服务器中<br><strong>form</strong></li>
+<li>用来创建一个表单</li>
+<li>属性：<br>action:需要一个服务器地址，提交表单时表单中的内容将会被提交到该地址</li>
+<li>表单项</li>
+</ul>
+<p><strong>input</strong></p>
+<ul>
+<li>它可以根据不同的type属性值，生成不同的表单项<br><code>type=&quot;text&quot; 文本框 &lt;input type=&quot;text&quot; name=&quot;&quot; /&gt;</code><br><code>type=&quot;password&quot; 密码框 &lt;input type=&quot;password&quot; name=&quot;&quot; /&gt;</code><br><code>type=&quot;radio&quot; 单选按钮 &lt;input type=&quot;radio&quot; name=&quot;&quot; value=&quot;&quot; checked=&quot;checked&quot; /&gt;</code><br><code>type=&quot;checkbox&quot; 多选框 &lt;input type=&quot;checkbox&quot; name=&quot;&quot; value=&quot;&quot; checked=&quot;checked&quot; /&gt;</code><br><code>type=&quot;submit&quot;  提交按钮 &lt;input type=&quot;submit&quot; value=&quot;按钮上的文字&quot; /&gt;</code><br><code>type=&quot;reset&quot;  重置按钮 &lt;input type=&quot;reset&quot; value=&quot;按钮上的文字&quot; /&gt;</code><br><code>type=&quot;button&quot; 普通按钮 &lt;input type=&quot;button&quot; value=&quot;按钮上的文字&quot; /&gt;</code></li>
+</ul>
+<p><strong>select</strong></p>
+<ul>
+<li>下拉列表<br><code>&lt;select name=&quot;&quot;&gt;</code><br><code>&lt;option value=&quot;&quot; selected=&quot;selected&quot;&gt;&lt;/option&gt;</code><br><code>&lt;option value=&quot;&quot;&gt; &lt;/option&gt;</code><br><code>&lt;option value=&quot;&quot;&gt;&lt;/option&gt;</code><br><code>&lt;/select&gt;</code></li>
+</ul>
+<p><strong>button</strong></p>
+<ul>
+<li>按钮功能input那几个按钮一样，但是它们要灵活一些<br><code>&lt;button type=&quot;submit&quot;&gt;按钮的文字&lt;/button&gt;</code><br><code>&lt;button type=&quot;reset&quot;&gt;按钮的文字&lt;/button&gt;</code><br><code>&lt;button type=&quot;button&quot;&gt;按钮的文字&lt;/button&gt;</code></li>
+</ul>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/css基础/" rel="tag"><i class="fas fa-tags"></i>css基础</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.jpg" alt="微信支付"/>
+      <span>微信支付</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.jpg" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2018/10/10/javascript学习-11/" rel="next" title="javascript学习(11)"><i class="fas fa-angle-left"></i><span class="nav-title">javascript学习(11)</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2018/10/11/javascript-DOM增删查改系列之删除/" rel="prev" title="javascript DOM增删查改系列之删除"><span class="nav-title">javascript DOM增删查改系列之删除</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div class="commentjs" id="comment-thread"></div>
+  <link rel="stylesheet" href="/css/commentjs.css">
+  <script defer type="text/javascript" src="/js/marked.min.js"></script>
+  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script defer type="text/javascript" src="/js/commentjs.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    getComments({
+      "type": "",
+      "user": "",
+      "repo": "",
+      "client_id": "",
+      "client_secret": "",
+      "no_comment": "这个页面还没有评论，现在就去评论吧！",
+      "go_to_comment": "去评论",
+      "issue_title": "CSS学习",
+      "btn_class": "button",
+      "comments_target": "#comment-thread"
+    });
+    marked.setOptions({
+      "highlight": function (code, lang) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    function mark() {
+      var markdowns = document.getElementsByClassName("markdown");
+      for (var i = 0; i < markdowns.length; ++i){
+        if (markdowns[i].innerHTML) {
+          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+        }
+      }
+    }
+    window.addEventListener("DOMContentLoaded", mark, false);
+    window.addEventListener("load", mark, false);
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="Wang Li">
+  
+  <h1 class="author-name">Wang Li</h1>
+  <h2 class="author-description">前端开发、HTML5、CSS3、Javascript的前端开发独立博客。</h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">21</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="categories-count">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">2</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">9</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#文档流"><span class="toc-text">文档流</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#浮动"><span class="toc-text">浮动</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#定位"><span class="toc-text">定位</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#表格"><span class="toc-text">表格</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#表单"><span class="toc-text">表单</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="http://wpa.qq.com/msgrd?v=3&uin=6169422&site=qq&menu=yes" target="_blank">QQ</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/nestedclass" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/u/1102053067" target="_blank">Weibo</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://mozilla.github.io/nunjucks/" target="_blank">Nunjucks</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">Wang Li</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

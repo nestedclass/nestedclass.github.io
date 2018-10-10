@@ -82,7 +82,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>归档 | 前端学习 - 前端修行之路-无与为乐者</title>
+    <title>前端学习 - 前端修行之路-无与为乐者</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -101,7 +101,7 @@
         
         <li role="menuitem"><a href="/">首页</a></li>
         
-        <li role="menuitem"><a href="/archives/" class="current">归档</a></li>
+        <li role="menuitem"><a href="/archives/">归档</a></li>
         
         <li role="menuitem"><a href="/categories/">分类</a></li>
         
@@ -120,162 +120,89 @@
         <div class="main-container">
           <div class="content">
             
-<div id="archive" class="archive page">
-  <h1 class="page-title">归档</h1>
-  <h2 class="page-counter">
-    
-    你已经写了 21 篇文章！
-    
-  </h2>
-  
-  
-  
-  
-  <h2 class="page-title">2018</h1>
+
+<div id="index" class="index page">
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-继承/" itemprop="url">javascript 继承</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T01:15:05+08:00">10-11</time>
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/01/javascript学习-1/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Wang Li">
+        <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
+        <meta itemprop="image" content="/images/avatar.png">
       </span>
-      
-    </header>
-  </article>
-  
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-Call-Apply/" itemprop="url">javascript Call/Apply</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T01:11:33+08:00">10-11</time>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="前端学习">
       </span>
-      
-    </header>
-  </article>
-  
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-原型、原型链/" itemprop="url">javascript 原型、原型链</a>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/10/01/javascript学习-1/" itemprop="url">javascript学习(1)</a>
       </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T01:09:35+08:00">10-11</time>
-      </span>
-      
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-01T22:00:44+08:00">2018-10-01 22:00:44</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Javascript/" itemprop="url" rel="index"><span itemprop="name">Javascript</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
     </header>
-  </article>
-  
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-预编译执行/" itemprop="url">javascript 预编译执行</a>
-      </h1>
+    <main class="post-main" itemprop="articleBody">
       
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T01:07:58+08:00">10-11</time>
-      </span>
+      <h6 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h6><p>JavaScript负责页面中的的行为。<br>它是一门运行在浏览器端的脚本语言。<br>JS的编写的位置<br>1.可以编写到标签的指定属性中<br><figure class="hljs highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"alert('hello');"</span>&gt;</span>我是按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:alert('aaa');"</span>&gt;</span>超链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>2.可以编写到script标签中<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"><span class="comment">//编写js代码</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>3.可以将代码编写到外部的js文件中，然后通过标签将其引入<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"文件路径"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>输出语句<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">"要输出的内容"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>该语句会在浏览器窗口中弹出一个警告框<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">"要输出的内容"</span>);</span><br></pre></td></tr></table></figure></p>
+<p> 该内容将会被写到body标签中，并在页面中显示<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"要输出的内容"</span>);</span><br></pre></td></tr></table></figure></p>
+<p> 该内容会被写到开发者工具的控制台中<br>基本的语法<br>注释<br>单行注释<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注释内容</span></span><br></pre></td></tr></table></figure></p>
+<p>多行注释<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/*</span></span><br><span class="line"><span class="comment">注释内容</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure></p>
+<p>JS严格区分大小写<br>JS中每条语句以分号(;)结尾<br>JS中会自动忽略多个空格和换行，所以我们可以利用空格和换行对代码进行格式化。</p>
+<p>字面量和变量<br>字面量<br>字面量实际上就是一些固定的值，比如 <code>1 2 3 4 true false null NaN &quot;hello&quot;</code><br>字面量都是不可以改变的。<br>由于字面量不是很方便使用，所以在JS中很少直接使用字面量<br>变量<br>变量可以用来保存字面量，并且可以保存任意的字面量<br>一般都是通过变量来使用字面量，而不直接使用字面量，而且也可以通过变量来对字面量进行一个描述<br>声明变量<br>使用var关键字来声明一个变量<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="keyword">var</span> b;</span><br><span class="line"><span class="keyword">var</span> c; 为变量赋值</span><br><span class="line">a = <span class="number">1</span>;</span><br><span class="line">b = <span class="number">2</span>;</span><br><span class="line">c = <span class="number">3</span>;</span><br></pre></td></tr></table></figure></p>
+<p>声明和赋值同时进行<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d = <span class="number">456</span>;</span><br><span class="line"><span class="keyword">var</span> e = <span class="number">789</span>; - 标识符</span><br></pre></td></tr></table></figure></p>
+<p>在JS中所有的可以自主命名的内容，都可以认为是一个标识符，<br>是标识符就应该遵守标识符的规范。<br> 比如：变量名、函数名、属性名<br> 规范：<br>1.标识符中可以含有字母、数字、_、$<br>2.标识符不能以数字开头<br>3.标识符不能是JS中的关键字和保留字<br>4.标识符一般采用驼峰命名法<code>xxxYyyZzz</code></p>
+
       
-    </header>
-  </article>
-  
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-基础知识/" itemprop="url">javascript 基础知识</a>
-      </h1>
+    </main>
+    <footer class="post-footer">
       
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T01:06:05+08:00">10-11</time>
-      </span>
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/JS基础/" rel="tag"><i class="fas fa-tags"></i>JS基础</a>
+        
+      </div>
       
-    </header>
-  </article>
-  
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-闭包/" itemprop="url">javascript 闭包</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T01:04:33+08:00">10-11</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-对象学习/" itemprop="url">javascript 对象学习</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T01:03:08+08:00">10-11</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-DOM增删查改系列之查找/" itemprop="url">javascript DOM增删查改系列之查找</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T00:52:32+08:00">10-11</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-DOM增删查改系列之删除/" itemprop="url">javascript DOM增删查改系列之删除</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T00:48:08+08:00">10-11</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/CSS学习/" itemprop="url">CSS学习</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T00:00:24+08:00">10-11</time>
-      </span>
-      
-    </header>
+    </footer>
   </article>
   
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
   </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  
+</div>
+
+
+
   
 </div>
 

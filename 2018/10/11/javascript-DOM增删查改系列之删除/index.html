@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -83,7 +82,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>标签 | 前端学习 - 前端修行之路-无与为乐者</title>
+    <title>javascript DOM增删查改系列之删除 | 前端学习 - 前端修行之路-无与为乐者</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -106,7 +105,7 @@
         
         <li role="menuitem"><a href="/categories/">分类</a></li>
         
-        <li role="menuitem"><a href="/tags/" class="current">标签</a></li>
+        <li role="menuitem"><a href="/tags/">标签</a></li>
         
         <li role="menuitem"><a href="/about/">关于</a></li>
         
@@ -121,23 +120,144 @@
         <div class="main-container">
           <div class="content">
             
-<div id="tags" class="tags page">
-  <article class="article post card animate">
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/11/javascript-DOM增删查改系列之删除/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="Wang Li">
+       <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="前端学习">
+      </span>
+    </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">标签</h1>
-    </header>
-    <main class="post-main">
-      <h2 class="page-counter">
+      <h1 class="post-title" itemprop="name headline">javascript DOM增删查改系列之删除</h1>
+      <div class="post-meta">
         
-        你已经创建了 9 个标签！
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T00:48:08+08:00">2018-10-11 00:48:08</time></span>
+        </span>
         
-      </h2>
-      <div class="tags-cloud">
-        <a href="/tags/Call-Apply/" style="font-size: 16px; color: #777">Call/Apply</a> <a href="/tags/DOM/" style="font-size: 24px; color: #444">DOM</a> <a href="/tags/JS基础/" style="font-size: 32px; color: #111">JS基础</a> <a href="/tags/css基础/" style="font-size: 16px; color: #777">css基础</a> <a href="/tags/javascript继承/" style="font-size: 16px; color: #777">javascript继承</a> <a href="/tags/原型、原型链/" style="font-size: 16px; color: #777">原型、原型链</a> <a href="/tags/基础知识/" style="font-size: 16px; color: #777">基础知识</a> <a href="/tags/对象/" style="font-size: 16px; color: #777">对象</a> <a href="/tags/闭包/" style="font-size: 16px; color: #777">闭包</a>
+        
+        
+        
+        
       </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>突然发现，与javaScriptDom的查找方法对比一下，对DOM的删除的方法还真是少的可怜啊！我找来找去好像就只有针对DOM接点的element.removeChild(elementNode)方法和element.replaceChild(newNode,oldNode)。而针对document对象没有用于删除dom节点的方法。</p>
+<p>自己的理解：为什么document对象没有删除dom节点的方法呢？因为document对象包含了一个HTML文档的主要结构，也就是所有的HTML文档都拥有的结构，从文档最开始的到、再到。如果对document对象创建删除节点的方法很可能会对该文档造成破坏性的影响。例如注释掉一个HTML文档的head节点用于模拟删除掉head节点，在浏览器中预览会发现诸如乱码问题的一系列问题。</p>
+<p>接下来说element.removeChild(elementNode)方法。应该很容易理解，element是一个DOM节点，参数是他的一个子节点。具体的例子：</p>
+<p>var element = document.body;</p>
+<p>element.removeChild(element.childNodes[0]);</p>
+<p>接下来说element.replaceChild(newNode,oldNode)。一直对这种方法感到很头疼，TMD记不住参数的顺序啊！！！。就当新的节点很重要，要放在前面好了。。然后是具体的例子：</p>
+<p>var newNode = document.createElement(“div”);//该方法存在于该系列的增加篇中</p>
+<p>var body = document.body;</p>
+<p>body.replaceChild(newNode,body.childNodes[0]);</p>
+
     </main>
-    <footer class="post-footer"></footer>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/DOM/" rel="tag"><i class="fas fa-tags"></i>DOM</a>
+        
+      </div>
+      
+    </footer>
   </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.jpg" alt="微信支付"/>
+      <span>微信支付</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.jpg" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2018/10/11/CSS学习/" rel="next" title="CSS学习"><i class="fas fa-angle-left"></i><span class="nav-title">CSS学习</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2018/10/11/javascript-DOM增删查改系列之查找/" rel="prev" title="javascript DOM增删查改系列之查找"><span class="nav-title">javascript DOM增删查改系列之查找</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div class="commentjs" id="comment-thread"></div>
+  <link rel="stylesheet" href="/css/commentjs.css">
+  <script defer type="text/javascript" src="/js/marked.min.js"></script>
+  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script defer type="text/javascript" src="/js/commentjs.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    getComments({
+      "type": "",
+      "user": "",
+      "repo": "",
+      "client_id": "",
+      "client_secret": "",
+      "no_comment": "这个页面还没有评论，现在就去评论吧！",
+      "go_to_comment": "去评论",
+      "issue_title": "javascript DOM增删查改系列之删除",
+      "btn_class": "button",
+      "comments_target": "#comment-thread"
+    });
+    marked.setOptions({
+      "highlight": function (code, lang) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    function mark() {
+      var markdowns = document.getElementsByClassName("markdown");
+      for (var i = 0; i < markdowns.length; ++i){
+        if (markdowns[i].innerHTML) {
+          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+        }
+      }
+    }
+    window.addEventListener("DOMContentLoaded", mark, false);
+    window.addEventListener("load", mark, false);
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
 </div>
 
           </div>
@@ -195,6 +315,11 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+    
+    
+    
     
     
     <hr>
@@ -268,5 +393,3 @@
 
   </body>
 </html>
-
-

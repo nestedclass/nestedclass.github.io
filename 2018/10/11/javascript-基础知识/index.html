@@ -82,7 +82,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>前端学习 - 前端修行之路-无与为乐者</title>
+    <title>javascript 基础知识 | 前端学习 - 前端修行之路-无与为乐者</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -99,7 +99,7 @@
       <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
       <ul id="menu" role="menubar" aria-hidden="false">
         
-        <li role="menuitem"><a href="/" class="current">首页</a></li>
+        <li role="menuitem"><a href="/">首页</a></li>
         
         <li role="menuitem"><a href="/archives/">归档</a></li>
         
@@ -120,289 +120,22 @@
         <div class="main-container">
           <div class="content">
             
-
-<div id="index" class="index page">
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/11/javascript-继承/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="Wang Li">
-        <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="前端学习">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-继承/" itemprop="url">javascript 继承</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T01:15:05+08:00">2018-10-11 01:15:05</time></span>
-        </span>
-        
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p></p><p>1、传统形式—&gt;原型链<br>缺点：过多的继承没用的属性</p><p></p>
-<pre><code class="lang-javascript">    Grand.prototype.latsName = &#39;Wang&#39;;
-    function Grand() {
-    }
-    var grand = new Grand();
-    Father.prototype = grand;
-    function Father() {
-        this.name = &quot;Cyy&quot;;
-    }
-    var father = new Father();
-    Son.prototype = father;
-    function Son() {
-        this.hobbit = &#39;smoke&#39;;
-    }
-    var son = new Son();
-</code></pre>
-<p>2、借用构造函数<br>缺点：1.不能继承借用构造函数的原型2.每次构造函数都要多走一个函数</p>
-<pre><code class="lang-javascript">    function Person(name, age, sex) {
-        this.name = name;
-        this.age = age;
-        this.sex = sex;
-    }
-    function Student(name, age, sex, tel, grade) {
-        Person.call(this,name, age, sex);
-        this.tel = tel;
-        this.grade = grade;
-    }
-    var person = new Student(&#39;wang&#39;, 18, &#39;male&#39;, 139, 2018);
-</code></pre>
-<p>3、共享原型<br>缺点：不能随便改动自己的原型</p>
-<pre><code class="lang-javascript">    Father.prototype.lastName = &#39;Wang&#39;;
-
-    function Father() {
-
-    }
-
-    function Son() {
-
-    }
-
-    function inherit(Target, Origin) {
-        Target.prototype = Origin.prototype;
-    }
-
-    // Son.prototype = Father.prototype;
-    inherit(Son, Father)
-    var son = new Son();
-</code></pre>
-<p>4、圣杯模式</p>
-<pre><code class="lang-javascript">    Father.prototype.lastName = &#39;Wang&#39;;
-
-    function Father() {
-
-    }
-
-    function Son() {
-
-    }
-
-    function inherit(Target, Origin) {
-        Target.prototype = Origin.prototype;
-
-        function F() {
-            F.prototype = Father.prototype;
-            Target.prototype = new F()
-            Target.prototype.constructor = Target;
-            Target.prototype.uber = Origin.prototype;
-        }
-    }
-
-    inherit(Son, Father)
-    var son = new Son();
-    var father = new Father();
-</code></pre>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/javascript继承/" rel="tag"><i class="fas fa-tags"></i>javascript继承</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/11/javascript-Call-Apply/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="Wang Li">
-        <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="前端学习">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-Call-Apply/" itemprop="url">javascript Call/Apply</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T01:11:33+08:00">2018-10-11 01:11:33</time></span>
-        </span>
-        
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p><strong>call/apply</strong><br>1.作用，改变this指向。<br>2.区别，后面传的参数形式不同。<br>3.call需要把实参按照形参的个数传进去<br>4.apply需要传一个arguments</p>
-<h4 id="call"><a href="#call" class="headerlink" title="call"></a>call</h4><p>例子：<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">'wang'</span>, <span class="number">18</span>);</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line">Person.call(obj,<span class="string">'CYY'</span>,<span class="number">200</span>);</span><br></pre></td></tr></table></figure></p>
-<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, sex</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.sex = sex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">name, age, sex, tel, grade</span>) </span>&#123;</span><br><span class="line">    Person.call(<span class="keyword">this</span>,name, age, sex);</span><br><span class="line">    <span class="keyword">this</span>.tel = tel;</span><br><span class="line">    <span class="keyword">this</span>.grade = grade;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Student(<span class="string">'wang'</span>, <span class="number">18</span>, <span class="string">'male'</span>, <span class="number">139</span>, <span class="number">2018</span>);</span><br></pre></td></tr></table></figure>
-<h4 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h4><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, sex</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.sex = sex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">name, age, sex, tel, grade</span>) </span>&#123;</span><br><span class="line">    Person.apply(<span class="keyword">this</span>,[name, age, sex]);</span><br><span class="line">    <span class="keyword">this</span>.tel = tel;</span><br><span class="line">    <span class="keyword">this</span>.grade = grade;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Student(<span class="string">'wang'</span>, <span class="number">18</span>, <span class="string">'male'</span>, <span class="number">139</span>, <span class="number">2018</span>);</span><br></pre></td></tr></table></figure>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/Call-Apply/" rel="tag"><i class="fas fa-tags"></i>Call/Apply</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/11/javascript-原型、原型链/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="Wang Li">
-        <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="前端学习">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-原型、原型链/" itemprop="url">javascript 原型、原型链</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T01:09:35+08:00">2018-10-11 01:09:35</time></span>
-        </span>
-        
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p>1、定义原型是function对象的一个属性，它定义了构造函数制造出的对象的公共祖先。通过该构造函数产生的对象，可以继承该原型的属性和方法。<br>2、利用原型特点和概念，可以提取共有属性。<br>3、对象如何查看原型 –&gt;隐式属性<code>__proto__</code>。<br>4、对象如何查看对象的构造函数–&gt;<code>constructor</code><br><strong>原型例子:</strong><br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">  Person.prototype.name = <span class="string">"abc"</span>;</span><br><span class="line">  Person.prototype.Lastname = <span class="string">"deng"</span>;</span><br><span class="line">  Person.prototype.say = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'hehe'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">'aaa'</span>)</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> person = <span class="keyword">new</span> Person();</span><br><span class="line">  <span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line">  Car.prototype = &#123;</span><br><span class="line">      carname: <span class="string">'BMW'</span>,</span><br><span class="line">      height: <span class="number">120</span>,</span><br><span class="line">      lang: <span class="number">5000</span>,</span><br><span class="line">      <span class="keyword">constructor</span>: Person //构造器指向</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">carname: <span class="string">'BC'</span>,</span><br><span class="line">      height: <span class="number">1400</span>,</span><br><span class="line">      lang: <span class="number">4900</span>,</span><br><span class="line">      <span class="keyword">constructor</span>: Car //构造器指向</span><br><span class="line">&#125;</span><br><span class="line">function Car() &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person(); <span class="keyword">var</span></span><br><span class="line">      car = <span class="keyword">new</span> Car();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>原型链</strong><br>1、如何构成原型链？<br>    原型链例子: 原型链原型<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Grand.prototype.latsName = <span class="string">'Wang'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Grand</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> grand = <span class="keyword">new</span> Grand();</span><br><span class="line">Father.prototype = grand;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Father</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">"Cyy"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> father = <span class="keyword">new</span> Father();</span><br><span class="line">Son.prototype = father;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Son</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.hobbit = <span class="string">'smoke'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> son = <span class="keyword">new</span> Son();</span><br></pre></td></tr></table></figure></p>
-<p>2、原型链上的属性增删改查<br>3、绝大多数对象的最终都会继承自Object.prototype<br>    // sayName的this指向,谁调用this指向谁<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype = &#123;</span><br><span class="line">    name: <span class="string">'a'</span></span><br><span class="line">    sayName: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'b'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure></p>
-<p>4、Object.create(原型)；<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">var</span> obj = <span class="built_in">Object</span>.create(原型);</span><br><span class="line"><span class="keyword">var</span> obj=&#123;<span class="attr">name</span>:<span class="string">'Wang'</span>,<span class="attr">age</span>:<span class="number">18</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> obj1=<span class="built_in">Object</span>.create(obj);</span><br></pre></td></tr></table></figure></p>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/原型、原型链/" rel="tag"><i class="fas fa-tags"></i>原型、原型链</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/11/javascript-预编译执行/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="Wang Li">
-        <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="前端学习">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-预编译执行/" itemprop="url">javascript 预编译执行</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T01:07:58+08:00">2018-10-11 01:07:58</time></span>
-        </span>
-        
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p>预编译(函数执行前)※</p>
-<ol>
-<li>创建AO对象（Active Object）</li>
-<li>查找函数形参及函数内变量声明，形参名及变量名作为AO对象的属性，值为undefined </li>
-<li>实参形参相统一，实参值赋给形参</li>
-<li>查找函数声明，函数名作为AO对象的属性，值为函数引用</li>
-</ol>
-<p>预编译(脚本代码块script执行前)</p>
-<ol>
-<li>查找全局变量声明（包括隐式全局变量声明，省略var声明），变量名作全局对象的属性，值为undefined</li>
-<li>查找函数声明，函数名作为全局对象的属性，值为函数引用</li>
-</ol>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
+<div id="post" class="page">
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/11/javascript-基础知识/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="Wang Li">
-        <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
-        <meta itemprop="image" content="/images/avatar.png">
+       <meta itemprop="name" content="Wang Li">
+       <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
+       <meta itemprop="image" content="/images/avatar.png">
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="前端学习">
+       <meta itemprop="name" content="前端学习">
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-基础知识/" itemprop="url">javascript 基础知识</a>
-      </h1>
+      <h1 class="post-title" itemprop="name headline">javascript 基础知识</h1>
       <div class="post-meta">
         
         <span class="post-date">
@@ -416,7 +149,6 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      
       <p>1 创建脚本块<br>引用内容程序代码<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script language=”JavaScript”&gt;</span><br><span class="line">JavaScript 代码写在这里面</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>2 隐藏脚本代码<br>引用内容程序代码<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script language=”JavaScript”&gt;</span><br><span class="line">&lt;!–</span><br><span class="line"><span class="built_in">document</span>.write(“Hello”);</span><br><span class="line"><span class="comment">// –&gt;</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>在不支持JavaScript的浏览器中将不执行相关代码<br>3 浏览器不支持的时候显示<br>引用内容程序代码<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;noscript&gt;</span><br><span class="line">Hello to the non-JavaScript browser.</span><br><span class="line">&lt;<span class="regexp">/noscript&gt;</span></span><br></pre></td></tr></table></figure></p>
@@ -492,7 +224,6 @@
 <p>69 数据公用<br>引用内容可以在框架页面定义数据项，使得该数据可以被多个框架中的页面公用<br>程序代码<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script language=”JavaScript”&gt;</span><br><span class="line"><span class="keyword">var</span> persistentVariable = “This is a persistent value”;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;frameset cols=”50%,*”&gt;</span></span><br><span class="line"><span class="regexp">&lt;frame name=”frame1” src=”/</span>”<span class="number">138</span>a.html””&gt;</span><br><span class="line">&lt;frame name=”frame2” src=”/”<span class="number">138</span>b.html””&gt;</span><br><span class="line">&lt;<span class="regexp">/frameset&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>这样在frame1和frame2中都可以使用变量persistentVariable<br>70 框架代码库<br>引用内容根据以上的一些思路，我们可以使用一个隐藏的框架页面来作为整个框架集的代码库<br>程序代码<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;frameset cols=”<span class="number">0</span>,<span class="number">50</span>%,*”&gt;</span><br><span class="line">&lt;frame name=”codeFrame” src=”/”<span class="number">140</span>code.html””&gt;</span><br><span class="line">&lt;frame name=”frame1” src=”/”<span class="number">140</span>a.html””&gt;</span><br><span class="line">&lt;frame name=”frame2” src=”/”<span class="number">140</span>b.html””&gt;</span><br><span class="line">&lt;<span class="regexp">/frameset&gt;</span></span><br></pre></td></tr></table></figure></p>
 
-      
     </main>
     <footer class="post-footer">
       
@@ -505,395 +236,41 @@
     </footer>
   </article>
   
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/11/javascript-闭包/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="Wang Li">
-        <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="前端学习">
-      </span>
+  
+<div class="reward" id="reward">
+  <p>坚持技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.jpg" alt="微信支付"/>
+      <span>微信支付</span>
     </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-闭包/" itemprop="url">javascript 闭包</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T01:04:33+08:00">2018-10-11 01:04:33</time></span>
-        </span>
-        
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p>Javascript中有几个非常重要的语言特性——对象、原型继承、闭包。其中闭包 对于那些使用传统静态语言C/C++的程序员来说是一个新的语言特性。本文将以例子入手来介绍Javascript闭包的语言特性，并结合一点 ECMAScript语言规范来使读者可以更深入的理解闭包。<br>注：本文是入门文章，例子素材整理于网络，如果你是高手，欢迎针对文章提出技术性建议和意见。本文讨论的是Javascript，不想做语言对比，如果您对Javascript天生不适，请自行绕道。<br><strong>什么是闭包</strong><br>闭包是什么?闭包是<strong>Closure</strong>，这是静态语言所不具有的一个新特性。但是闭包也不是什么复杂到不可理解的东西，简而言之，闭包就是：<br><strong>•    闭包就是函数的局部变量集合，只是这些局部变量在函数返回后会继续存在。<br>•    闭包就是就是函数的“堆栈”在函数返回后并不释放，我们也可以理解为这些函数堆栈并不在栈上分配而是在堆上分配<br>•    当在一个函数内定义另外一个函数就会产生闭包</strong><br>上面的第二定义是第一个补充说明，抽取第一个定义的主谓宾——闭包是函数的‘局部变量’集合。只是这个局部变量是可以在函数返回后被访问。（这个不是官方定义，但是这个定义应该更有利于你理解闭包）<br>做为局部变量都可以被函数内的代码访问，这个和静态语言是没有差别。闭包的差别在于局部变变量可以在函数执行结束后仍然被函数外的代码访问。这意味 着函数必须返回一个指向闭包的“引用”，或将这个”引用”赋值给某个外部变量，才能保证闭包中局部变量被外部代码访问。当然包含这个引用的实体应该是一个 对象，因为在Javascript中除了基本类型剩下的就都是对象了。可惜的是，ECMAScript并没有提供相关的成员和方法来访问闭包中的局部变 量。但是在ECMAScript中，函数对象中定义的内部函数() inner function是可以直接访问外部函数的局部变量，通过这种机制，我们就可以以如下的方式完成对闭包的访问了。<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greeting</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line"> <span class="keyword">var</span> text = <span class="string">'Hello '</span> + name; <span class="comment">// local variable</span></span><br><span class="line">     <span class="comment">// 调用时，产生闭包，并返回内部函数对象给调用者</span></span><br><span class="line">     <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; alert(text); &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> sayHello=greeting( <span class="string">"Closure"</span> );</span><br><span class="line">sayHello()  <span class="comment">// 通过闭包访问到了局部变量text</span></span><br></pre></td></tr></table></figure></p>
-<p>上述代码的执行结果是：Hello Closure，因为sayHello()函数在greeting函数执行完毕后，仍然可以访问到了定义在其之内的局部变量text。<br>好了，这个就是传说中闭包的效果，闭包在Javascript中有多种应用场景和模式，比如Singleton，Power Constructor等这些Javascript模式都离不开对闭包的使用。<br>ECMAScript闭包模型<br>ECMAScript到底是如何实现闭包的呢？想深入了解的亲们可以获取ECMAScript 规范进行研究，我这里也只做一个简单的讲解，内容也是来自于网络。<br>在ECMAscript的脚本的函数运行时，每个函数关联都有一个执行上下文场景(Execution Context) ，这个执行上下文场景中包含三个部分<br><strong>•    文法环境（The LexicalEnvironment）<br>•    变量环境（The VariableEnvironment）<br>•    this绑定</strong><br>其中第三点this绑定与闭包无关，不在本文中讨论。文法环境中用于解析函数执行过程使用到的变量标识符。我们可以将文法环境想象成一个对象，该对 象包含了两个重要组件，环境记录(Enviroment Recode)，和外部引用(指针)。环境记录包含包含了函数内部声明的局部变量和参数变量，外部引用指向了外部函数对象的上下文执行场景。全局的上下文 场景中此引用值为NULL。这样的数据结构就构成了一个单向的链表，每个引用都指向外层的上下文场景。<br>例如上面我们例子的闭包模型应该是这样，sayHello函数在最下层，上层是函数greeting，最外层是全局场景。如下图：</p>
-<p>因此当sayHello被调用的时候，sayHello会通过上下文场景找到局部变量text的值，因此在屏幕的对话框中显示出”Hello Closure”<br>变量环境(The VariableEnvironment)和文法环境的作用基本相似，具体的区别请参看ECMAScript的规范文档。<br>闭包的样列<br>前面的我大致了解了Javascript闭包是什么，闭包在Javascript是怎么实现的。下面我们通过针对一些例子来帮助大家更加深入的理解闭包，下面共有5个样例，例子来自于JavaScript Closures For Dummies(镜像)。<br>例子1:闭包中局部变量是引用而非拷贝<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say667</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> <span class="comment">// Local variable that ends up within closure</span></span><br><span class="line">    <span class="keyword">var</span> num = <span class="number">666</span>;</span><br><span class="line">    <span class="keyword">var</span> sayAlert = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; alert(num); &#125;</span><br><span class="line">    num++;</span><br><span class="line">    <span class="keyword">return</span> sayAlert;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> sayAlert = say667();</span><br><span class="line">sayAlert()</span><br></pre></td></tr></table></figure></p>
-<p>因此执行结果应该弹出的667而非666。<br>例子2：多个函数绑定同一个闭包，因为他们定义在同一个函数内。<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setupSomeGlobals</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Local variable that ends up within closure</span></span><br><span class="line">    <span class="keyword">var</span> num = <span class="number">666</span>;</span><br><span class="line">    <span class="comment">// Store some references to functions as global variables</span></span><br><span class="line">    gAlertNumber = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; alert(num); &#125;</span><br><span class="line">    gIncreaseNumber = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; num++; &#125;</span><br><span class="line">    gSetNumber = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123; num = x; &#125;</span><br><span class="line">&#125;</span><br><span class="line">setupSomeGolbals(); <span class="comment">// 为三个全局变量赋值</span></span><br><span class="line">gAlertNumber(); <span class="comment">//666</span></span><br><span class="line">gIncreaseNumber();</span><br><span class="line">gAlertNumber(); <span class="comment">// 667</span></span><br><span class="line">gSetNumber(<span class="number">12</span>);<span class="comment">//</span></span><br><span class="line">gAlertNumber();<span class="comment">//12</span></span><br></pre></td></tr></table></figure></p>
-<p>例子3：当在一个循环中赋值函数时，这些函数将绑定同样的闭包<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">buildList</span>(<span class="params">list</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; list.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> item = <span class="string">'item'</span> + list[i];</span><br><span class="line">        result.push( <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;alert(item + <span class="string">' '</span> + list[i])&#125; );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testList</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> fnlist = buildList([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]);</span><br><span class="line">    <span class="comment">// using j only to help prevent confusion - could use i</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; fnlist.length; j++) &#123;</span><br><span class="line">        fnlist[j]();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>testList的执行结果是弹出item3 undefined窗口三次，因为这三个函数绑定了同一个闭包，而且item的值为最后计算的结果，但是当i跳出循环时i值为4，所以list[4]的结果为undefined.<br>例子4：外部函数所有局部变量都在闭包内，即使这个变量声明在内部函数定义之后。<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayAlice</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> sayAlert = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; alert(alice); &#125;</span><br><span class="line">    <span class="comment">// Local variable that ends up within closure</span></span><br><span class="line">    <span class="keyword">var</span> alice = <span class="string">'Hello Alice'</span>;</span><br><span class="line">    <span class="keyword">return</span> sayAlert;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> helloAlice=sayAlice();</span><br><span class="line">helloAlice();</span><br></pre></td></tr></table></figure></p>
-<p>执行结果是弹出”Hello Alice”的窗口。即使局部变量声明在函数sayAlert之后，局部变量仍然可以被访问到。<br>例子5：每次函数调用的时候创建一个新的闭包<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">newClosure</span>(<span class="params">someNum, someRef</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Local variables that end up within closure</span></span><br><span class="line">    <span class="keyword">var</span> num = someNum;</span><br><span class="line">    <span class="keyword">var</span> anArray = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">    <span class="keyword">var</span> ref = someRef;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">        num += x;</span><br><span class="line">        anArray.push(num);</span><br><span class="line">        alert(<span class="string">'num: '</span> + num +</span><br><span class="line">        <span class="string">'\nanArray '</span> + anArray.toString() +</span><br><span class="line">        <span class="string">'\nref.someVar '</span> + ref.someVar);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">closure1=newClosure(<span class="number">40</span>,&#123;<span class="attr">someVar</span>:<span class="string">'closure 1'</span>&#125;);</span><br><span class="line">closure2=newClosure(<span class="number">1000</span>,&#123;<span class="attr">someVar</span>:<span class="string">'closure 2'</span>&#125;);</span><br><span class="line">closure1(<span class="number">5</span>); <span class="comment">// num:45 anArray[1,2,3,45] ref:'someVar closure1'</span></span><br><span class="line">closure2(<span class="number">-10</span>);<span class="comment">// num:990 anArray[1,2,3,990]</span></span><br><span class="line"><span class="string">``</span><span class="string">` ref:'someVar closure2'</span></span><br><span class="line"><span class="string">闭包的应用</span></span><br><span class="line"><span class="string">Singleton 单件：</span></span><br><span class="line"><span class="string">view source</span></span><br><span class="line"><span class="string">print?</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="keyword">var</span> singleton = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> privateVariable;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">privateFunction</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">        ...privateVariable...</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        firstMethod: <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">            ...privateVariable...</span><br><span class="line">        &#125;,</span><br><span class="line">        secondMethod: <span class="function"><span class="keyword">function</span> (<span class="params">c</span>) </span>&#123;</span><br><span class="line">            ...privateFunction()...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure></p>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/闭包/" rel="tag"><i class="fas fa-tags"></i>闭包</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/11/javascript-对象学习/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="Wang Li">
-        <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="前端学习">
-      </span>
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.jpg" alt="支付宝"/>
+      <span>支付宝</span>
     </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-对象学习/" itemprop="url">javascript 对象学习</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T01:03:08+08:00">2018-10-11 01:03:08</time></span>
-        </span>
-        
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p>构造函数内部原理（三段论）<br>1.在函数体最前面隐式的加上<code>this.{}</code><br>2.执行<code>this.xxx=xxx;</code><br>3.隐式的返回this<br>例子：<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, height</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name,</span><br><span class="line">        <span class="keyword">this</span>.height = height,</span><br><span class="line">        <span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.say);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> objs=<span class="keyword">new</span> Person(<span class="string">"王黎"</span>,<span class="number">180</span>);</span><br><span class="line"><span class="built_in">console</span>.log(objs);</span><br></pre></td></tr></table></figure></p>
-<p><strong>包装类</strong><br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num=<span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">123</span>);</span><br><span class="line"><span class="keyword">var</span> str=<span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'abc'</span>);</span><br><span class="line"><span class="keyword">var</span> bol=<span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">true</span>);</span><br></pre></td></tr></table></figure></p>
-<p>原始值不能有属性和方法<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num=<span class="number">4</span>;</span><br><span class="line"><span class="comment">//new String('4').len=2; delete</span></span><br><span class="line">num.len=<span class="number">3</span>;</span><br><span class="line"><span class="built_in">console</span>.log(num.len);<span class="comment">//undefiend</span></span><br><span class="line"><span class="built_in">console</span>.log(num)<span class="comment">//4</span></span><br></pre></td></tr></table></figure></p>
+    
+    
+  </div>
+</div>
 
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/对象/" rel="tag"><i class="fas fa-tags"></i>对象</a>
-        
-      </div>
-      
-    </footer>
-  </article>
+
   
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/11/javascript-DOM增删查改系列之查找/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="Wang Li">
-        <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="前端学习">
-      </span>
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2018/10/11/javascript-闭包/" rel="next" title="javascript 闭包"><i class="fas fa-angle-left"></i><span class="nav-title">javascript 闭包</span></a>
+      
     </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-DOM增删查改系列之查找/" itemprop="url">javascript DOM增删查改系列之查找</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T00:52:32+08:00">2018-10-11 00:52:32</time></span>
-        </span>
-        
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
+    <div class="page-nav-prev page-nav-item">
       
-      <p>使用javaScript进行DOM编程，必不可少的就是对DOM元素进行操作，各种复杂的操作说到底就是简单的增、删、查、改等基本操作的相互组合。今天我们就从四种基本操作的查找操作开始。</p>
-<p>首先根据查找的范围大致上可以分为两种，一种是直接在document上进行查找，另一种是基于某一特定的元素进行查找。</p>
-<p>第一种：基于document进行的查找。</p>
-<p>这一类查找又可以分为两种情况，一种是通过不同get方法传入不同的参数，从而得到相应的DOM元素或DOM元素数组。</p>
-<p>这一类的方法主要有：</p>
-<p>1、document.getElementById(id)。该方法通过传入元素的ID从而找到这个元素，返回的是一个DOM元素。</p>
-<p>2、document.getElementsByClassName(className)。该方法通过传入元素的类名从而找到一系列含有该类名的元素，返回的是一个DOM元素数组。</p>
-<p>3、document.getElementsByTagName(tagName)。该方法通过传入元素的标签名从而找到所有的标签名与参数相同的元素，返回的也是一个DOM元素数组。</p>
-<p>4、document.getElementsByName(name)。该方法与我想象中的有所不同，传入name从而得到name名相同的元素，返回的也是一个DOM元素数组。这个name有必要说一下，这个name指的是DOM元素的一个属性，与Class类似，name属性常见于单选框，用于区分同一类按钮。或许这个方法更加合适的名字应该是getElementsByNameName()。</p>
-<p>5、document.querySelectorAll(selector)。该方法传入的参数比较特殊，但该方法也十分人性化。你只需传入css选择器，便会得到符合这个选择器的元素。例如document.querySelectorAll(“#outder .inner”)便会获得ID名为outder元素下的所有的类名为inner的子元素。该方法返回的也是一个DOM元素数组。</p>
-<p>6、document.querySelector(selector)。该方法与第5个方法类似，但是返回类型却不相同。该方法返回的是符合该选择器的第一个元素。也就是说该方法返回的是一个DOM元素，而不是一个元素数组。</p>
-<p>基于document的查找的第二种情况是直接通过document的属性从而获得相应的元素。</p>
-<p>这一类属性主要有：</p>
-<p>1、document.forms。注意没有括号，该属性的意思是获得文档下的所有表单。</p>
-<p>2、document.images。获得所有的图片元素。</p>
-<p>3、document.links。获得所有的超链接，即a标签元素。</p>
-<p>4、document.title。获得文档的标题元素。title也是一个DOM元素。</p>
-<p>5、document.scripts。获得文档所有标签名为script的元素。</p>
-<p>6、document.body。获得body标签元素。</p>
-<p>第二种，基于某一特定的DOM元素进行查找。</p>
-<p>这类方法也可以分为两种情况，一种是通过get方法，另一种同样也是通过属性的方式获得。</p>
-<p>通过get方法的情况主要是以下几种，与document的get方法不同，基于element的get方法更加少。</p>
-<p>1、element.getElementsByTagName(tagName)。</p>
-<p>2、element.getElementsByClassNmae(className)。</p>
-<p>3、element.querySelector(selector)。</p>
-<p>4、element.querySelectorAll(selector)。</p>
-<p>常用的只有以上两种。</p>
-<p>另外的一种情况是通过属性获得，这类情况与document的属性相比多了很多新属性。</p>
-<p>1、element.childNodes。 获得某一元素的所有子元素，该属性值是一个DOM元素对象数组。</p>
-<p>2、element.firstChild。获得某一元素的第一个子元素，属性值是一个DOM元素。</p>
-<p>3、element.lastChild。获得某一个元素的最后一个子元素，属性值是一个DOM元素。</p>
-<p>4、element.nextSibling。获得某一元素的下一个兄弟元素。形象的说法是“弟弟元素”。</p>
-<p>5、element.previousSibling。获得某一元素的前一个兄弟元素。形象的说法是“哥哥元素”。</p>
-<p>6、element.parentNode。获得某一元素的父元素，该父元素是直接父元素。属性值是一个DOM元素。</p>
-<p>至此，对DOM元素的查找的方法已经介绍完了。</p>
-
+      <a href="/2018/10/11/javascript-预编译执行/" rel="prev" title="javascript 预编译执行"><span class="nav-title">javascript 预编译执行</span><i class="fas fa-angle-right"></i></a>
       
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/DOM/" rel="tag"><i class="fas fa-tags"></i>DOM</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/11/javascript-DOM增删查改系列之删除/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="Wang Li">
-        <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="前端学习">
-      </span>
     </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-DOM增删查改系列之删除/" itemprop="url">javascript DOM增删查改系列之删除</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T00:48:08+08:00">2018-10-11 00:48:08</time></span>
-        </span>
-        
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p>突然发现，与javaScriptDom的查找方法对比一下，对DOM的删除的方法还真是少的可怜啊！我找来找去好像就只有针对DOM接点的element.removeChild(elementNode)方法和element.replaceChild(newNode,oldNode)。而针对document对象没有用于删除dom节点的方法。</p>
-<p>自己的理解：为什么document对象没有删除dom节点的方法呢？因为document对象包含了一个HTML文档的主要结构，也就是所有的HTML文档都拥有的结构，从文档最开始的到、再到。如果对document对象创建删除节点的方法很可能会对该文档造成破坏性的影响。例如注释掉一个HTML文档的head节点用于模拟删除掉head节点，在浏览器中预览会发现诸如乱码问题的一系列问题。</p>
-<p>接下来说element.removeChild(elementNode)方法。应该很容易理解，element是一个DOM节点，参数是他的一个子节点。具体的例子：</p>
-<p>var element = document.body;</p>
-<p>element.removeChild(element.childNodes[0]);</p>
-<p>接下来说element.replaceChild(newNode,oldNode)。一直对这种方法感到很头疼，TMD记不住参数的顺序啊！！！。就当新的节点很重要，要放在前面好了。。然后是具体的例子：</p>
-<p>var newNode = document.createElement(“div”);//该方法存在于该系列的增加篇中</p>
-<p>var body = document.body;</p>
-<p>body.replaceChild(newNode,body.childNodes[0]);</p>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/DOM/" rel="tag"><i class="fas fa-tags"></i>DOM</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/11/CSS学习/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="Wang Li">
-        <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="前端学习">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/CSS学习/" itemprop="url">CSS学习</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T00:00:24+08:00">2018-10-11 00:00:24</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/css/" itemprop="url" rel="index"><span itemprop="name">css</span></a></span>
-        </span>
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <h3 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h3><ul>
-<li>所有的元素默认情况下都是在文档流中存在的</li>
-<li>文档流是网页的最底层</li>
-<li>元素在文档流中的特点：</li>
-<li>块元素<br>1.默认宽度是父元素的全部<br>2.默认高度被内容（子元素）撑开<br>3.在页面中自上而下垂直排列</li>
-<li>内联元素<br>1.默认高度和宽度都被内容撑开<br>2.在页面中自左向右水平排列，如果一行不足以容下所有的元素<br>则换到下一行继续从左向右</li>
-</ul>
-<h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><ul>
-<li>使用<code>float</code>来设置元素的浮动</li>
-<li>可选值：<br><code>none</code> 默认值，元素不浮动，就在文档流中<br><code>left</code> 元素向页面的左侧浮动<br><code>right</code> 元素向页面的右侧浮动</li>
-<li><p>浮动特点：<br>1.元素设置浮动以后，会完全脱离文档流，并向页面的左上或右上浮动。<br>直到遇到父元素的边框或其他的父元素时则停止浮动。<br>2.如果浮动元素上边是一个没有浮动的块元素，元素不会超过该块元素。<br>3.浮动元素的浮动位置不能超过他上边浮动的兄弟元素，最多一边齐<br>4.浮动元素不会覆盖文字，文字会围绕在浮动元素的周围，所以可以通过浮动来实现文字环绕图片的效果。</p>
-</li>
-<li><p>浮动以后元素会完全脱离文档流，脱离文档流以后元素会具有如下特点：<br>1.块元素不独占一行<br>2.块元素的宽度和高度都被内容撑开<br>3.元素不在文档流占用位置<br>4.内联元素会变成块元素</p>
-</li>
-<li><p>高度塌陷</p>
-</li>
-<li>在文档流中元素的高度默认被子元素撑开，当子元素浮动时，子元素会脱离文档流，<br>此时将不能撑起父元素的高度，会导致父元素的高度塌陷。父元素高度塌陷会导致其他元素的位置上移，导致页面的布局混乱。</li>
-<li>可以通过开启元素的BFC来处理高度塌陷的问题。</li>
-<li>BFC叫做Block Formatting Context</li>
-<li>它是一个隐含属性，默认情况是关闭，当开启以后元素会具有如下的特性：<br>1.父元素的垂直外边距不会和子元素重叠<br>2.开启BFC的元素不会被浮动元素覆盖<br>3.父元素可以包含浮动的子元素 <strong>**</strong></li>
-<li>开启BFC的方式很多：<br>1.设置元素浮动<br>2.设置元素绝对定位<br>3.设置元素为<code>inline-block</code><br>4.将元素的overflow设置为一个非默认值</li>
-<li>一般我们采取副作用比较小的方式<br><code>overflow:hidden</code>;</li>
-</ul>
-<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><ul>
-<li>通过定位可以将元素摆放到页面的任意位置</li>
-<li>使用position来设置元素的定位</li>
-<li>可选值：</li>
-<li>static 默认值 元素不开启定位</li>
-<li>relative 开启元素的相对定位</li>
-<li>absolute 开启元素的绝对定位</li>
-<li><p>fixed 开启元素的固定定位</p>
-</li>
-<li><p>相对定位<br>1.相对于元素自身在文档流中的位置进行定位<br>2.相对定位的元素不会脱离文档流，定位元素的性质不会改变，块还是块，内联还是内联<br>3.如果不设置偏移量，元素不会发生任何的变化<br>4.会提升元素的层级</p>
-</li>
-<li><p>绝对定位<br>1.相对于离它最近的开启了定位的祖先元素进行定位，如果祖先元素都没有开启定位则相对于浏览器窗口进行定位。<br>2.绝对定位会使元素完全脱离文档流，会改变元素的性质，内联变成块元素，块元素的宽度被内容撑开<br>3.绝对定位的元素如果不设置偏移量，元素的位置不会发生变化<br>4.会提升元素的层级</p>
-</li>
-<li><p>固定定位</p>
-</li>
-<li>固定定位也是一种绝对定位，它的大部分特点都和绝对定位是相同的。</li>
-<li>不同的是：</li>
-<li>固定定位永远相对于浏览器窗口进行定位</li>
-<li><p>固定定位会固定在浏览器的指定的位置，不会随页面一起滚动</p>
-</li>
-<li><p>偏移量</p>
-</li>
-<li><p>当元素开启了定位以后，可以通过四个偏移量来设置元素的位置<br><code>top</code>：相对于定位位置的顶部的偏移量<br><code>bottom</code>：相对于定位位置的底部的偏移量<br><code>left</code>：相对于定位位置的左侧的偏移量<br><code>right</code>：相对于定位位置的右侧的偏移量</p>
-</li>
-<li><p>一般只需要使用两个值即可给元素进行定位<br><code>top left</code><br><code>top right</code><br><code>bottom left</code><br><code>bottom right</code></p>
-</li>
-<li><p>偏移量也可以指定一个负值，如果是负值则元素会向相反的方向移动</p>
-</li>
-<li>层级</li>
-<li><p>当元素开启定位以后，可以通过<code>z-index</code>来设置层级，<br>它需要一个正整数作为参数，值越大层级越高，层级越高越优先显示<br>如果层级一样，则后边的会盖住前边的，父元素永远都不会盖住子元素。</p>
-</li>
-<li><p>文档流 &lt; 浮动 &lt; 定位 </p>
-</li>
-<li><p>元素的透明<br>使用<code>opacity</code>来设置元素的透明度</p>
-</li>
-<li>需要一个0-1之间的值</li>
-<li>0 表示完全透明</li>
-<li><p>1 表示完全不透明</p>
-<p>IE8及以下的浏览器不支持该样式，需要使用如下方式来设置<br>filter:alpha(opacity=透明度);</p>
-</li>
-<li>需要一个0-100之间的值</li>
-<li>0 表示完全透明</li>
-<li>100 表示完全不透明</li>
-</ul>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><ul>
-<li>在网页中可以通过表格来表示一些格式化的数据</li>
-<li>表格相关的标签</li>
-<li><code>&lt;table&gt;</code>用来创建一个表格</li>
-<li><code>&lt;tr&gt;</code> 表示表格中的一行</li>
-<li><code>&lt;th&gt;</code> 表示表头中的单元格</li>
-<li><code>&lt;td&gt;</code> 表示表格中的单元格</li>
-<li>属性：<br><code>colspan</code> 横向的合并单元格<br><code>rowspan</code> 纵向的合并单元格</li>
-<li><p>例子：</p>
-<p><code>&lt;table&gt;</code><br><code>&lt;tr&gt;</code><br><code>&lt;td&gt;&lt;/td&gt;</code><br><code>&lt;td&gt;&lt;/td&gt;</code><br><code>&lt;/tr&gt;</code><br><code>&lt;tr&gt;</code><br><code>&lt;td&gt;&lt;/td&gt;</code><br><code>&lt;td&gt;&lt;/td&gt;</code><br><code>&lt;/tr&gt;</code><br><code>&lt;/table&gt;</code></p>
-</li>
-</ul>
-<p>长表格</p>
-<ul>
-<li><code>&lt;thead&gt;</code> 表格的头部</li>
-<li><code>&lt;tbody&gt;</code> 表格的主体</li>
-<li>注意：如果表格中没有写thead tbody tfoot，浏览器会自动向table中添加一个tbody<br>并且将所有的tr都放到tbody中，tr是tbody的子元素，不是table的子元素</li>
-<li><code>&lt;tfoot&gt;</code> 表格的底部</li>
-</ul>
-<h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><ul>
-<li>表单可以将用户的信息提交到服务器中<br><strong>form</strong></li>
-<li>用来创建一个表单</li>
-<li>属性：<br>action:需要一个服务器地址，提交表单时表单中的内容将会被提交到该地址</li>
-<li>表单项</li>
-</ul>
-<p><strong>input</strong></p>
-<ul>
-<li>它可以根据不同的type属性值，生成不同的表单项<br><code>type=&quot;text&quot; 文本框 &lt;input type=&quot;text&quot; name=&quot;&quot; /&gt;</code><br><code>type=&quot;password&quot; 密码框 &lt;input type=&quot;password&quot; name=&quot;&quot; /&gt;</code><br><code>type=&quot;radio&quot; 单选按钮 &lt;input type=&quot;radio&quot; name=&quot;&quot; value=&quot;&quot; checked=&quot;checked&quot; /&gt;</code><br><code>type=&quot;checkbox&quot; 多选框 &lt;input type=&quot;checkbox&quot; name=&quot;&quot; value=&quot;&quot; checked=&quot;checked&quot; /&gt;</code><br><code>type=&quot;submit&quot;  提交按钮 &lt;input type=&quot;submit&quot; value=&quot;按钮上的文字&quot; /&gt;</code><br><code>type=&quot;reset&quot;  重置按钮 &lt;input type=&quot;reset&quot; value=&quot;按钮上的文字&quot; /&gt;</code><br><code>type=&quot;button&quot; 普通按钮 &lt;input type=&quot;button&quot; value=&quot;按钮上的文字&quot; /&gt;</code></li>
-</ul>
-<p><strong>select</strong></p>
-<ul>
-<li>下拉列表<br><code>&lt;select name=&quot;&quot;&gt;</code><br><code>&lt;option value=&quot;&quot; selected=&quot;selected&quot;&gt;&lt;/option&gt;</code><br><code>&lt;option value=&quot;&quot;&gt; &lt;/option&gt;</code><br><code>&lt;option value=&quot;&quot;&gt;&lt;/option&gt;</code><br><code>&lt;/select&gt;</code></li>
-</ul>
-<p><strong>button</strong></p>
-<ul>
-<li>按钮功能input那几个按钮一样，但是它们要灵活一些<br><code>&lt;button type=&quot;submit&quot;&gt;按钮的文字&lt;/button&gt;</code><br><code>&lt;button type=&quot;reset&quot;&gt;按钮的文字&lt;/button&gt;</code><br><code>&lt;button type=&quot;button&quot;&gt;按钮的文字&lt;/button&gt;</code></li>
-</ul>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/css基础/" rel="tag"><i class="fas fa-tags"></i>css基础</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
   </nav>
   
   
@@ -901,6 +278,44 @@
 
 <div class="comments" id="comments">
   
+  
+  <div class="commentjs" id="comment-thread"></div>
+  <link rel="stylesheet" href="/css/commentjs.css">
+  <script defer type="text/javascript" src="/js/marked.min.js"></script>
+  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script defer type="text/javascript" src="/js/commentjs.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    getComments({
+      "type": "",
+      "user": "",
+      "repo": "",
+      "client_id": "",
+      "client_secret": "",
+      "no_comment": "这个页面还没有评论，现在就去评论吧！",
+      "go_to_comment": "去评论",
+      "issue_title": "javascript 基础知识",
+      "btn_class": "button",
+      "comments_target": "#comment-thread"
+    });
+    marked.setOptions({
+      "highlight": function (code, lang) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    function mark() {
+      var markdowns = document.getElementsByClassName("markdown");
+      for (var i = 0; i < markdowns.length; ++i){
+        if (markdowns[i].innerHTML) {
+          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+        }
+      }
+    }
+    window.addEventListener("DOMContentLoaded", mark, false);
+    window.addEventListener("load", mark, false);
+  });
+  </script>
   
   
 </div>
@@ -965,6 +380,11 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+    
+    
+    
     
     
     <hr>
