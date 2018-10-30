@@ -125,6 +125,249 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/10/javascript学习-2/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Wang Li">
+        <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="前端学习">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/10/10/javascript学习-2/" itemprop="url">javascript学习(2)</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-10T01:41:34+08:00">2018-10-10 01:41:34</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Javascript/" itemprop="url" rel="index"><span itemprop="name">Javascript</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>JS中一共分成六种数据类型</p>
+<ol>
+<li>String 字符串</li>
+<li>Number 数值</li>
+<li>Boolean 布尔值</li>
+<li>Null 空值</li>
+<li>Undefined 未定义</li>
+<li>Object 对象</li>
+</ol>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><h4 id="String-字符串"><a href="#String-字符串" class="headerlink" title="String 字符串"></a>String 字符串</h4><ul>
+<li>JS中的字符串需要使用引号引起来双引号或单引号都行</li>
+<li>在字符串中使用\作为转义字符<br><code>\&#39;  ==&gt; &#39;,
+\&quot;  ==&gt; &quot;,
+\n  ==&gt; 换行,
+\t  ==&gt; 制表符,
+\\  ==&gt; \</code>            </li>
+<li>使用typeof运算符检查字符串时，会返回”string”    </li>
+</ul>
+<h4 id="Number-数值"><a href="#Number-数值" class="headerlink" title="Number 数值"></a>Number 数值</h4><ul>
+<li>JS中所有的整数和浮点数都是Number类型</li>
+<li>特殊的数字<br>  Infinity 正无穷<br>  -Infinity 负无穷<br>  NaN 非法数字（Not A Number）</li>
+<li><p>其他进制的数字的表示：<br>  0b 开头表示二进制，但是不是所有的浏览器都支持<br>  0 开头表示八进制<br>  0x 开头表示十六进制</p>
+</li>
+<li><p>使用typeof检查一个Number类型的数据时，会返回”number”<br> （包括NaN 和 Infinity）</p>
+</li>
+</ul>
+<h4 id="Boolean-布尔值"><a href="#Boolean-布尔值" class="headerlink" title="Boolean 布尔值"></a>Boolean 布尔值</h4><ul>
+<li>布尔值主要用来进行逻辑判断，布尔值只有两个</li>
+<li>true 逻辑的真</li>
+<li>false 逻辑的假</li>
+<li>使用typeof检查一个布尔值时，会返回”boolean”    </li>
+</ul>
+<h4 id="Null-空值"><a href="#Null-空值" class="headerlink" title="Null 空值"></a>Null 空值</h4><ul>
+<li>空值专门用来表示为空的对象，Null类型的值只有一个</li>
+<li>null</li>
+<li>使用typeof检查一个Null类型的值时会返回”object”</li>
+</ul>
+<h4 id="Undefined-未定义"><a href="#Undefined-未定义" class="headerlink" title="Undefined 未定义"></a>Undefined 未定义</h4><ul>
+<li>如果声明一个变量但是没有为变量赋值此时变量的值就是undefined</li>
+<li>该类型的值只有一个 undefined</li>
+<li>使用typeof检查一个Undefined类型的值时，会返回”undefined”</li>
+</ul>
+<h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><h4 id="Object-对象"><a href="#Object-对象" class="headerlink" title="Object 对象"></a>Object 对象</h4><ul>
+<li>类型转换</li>
+<li>类型转换就是指将其他的数据类型，转换为String Number 或 Boolean</li>
+<li><p>转换为String</p>
+<ul>
+<li>方式一（强制类型转换）：</li>
+<li>调用被转换数据的toString()方法</li>
+<li>例子：<br><code>var a = 123;
+a = a.toString();</code></li>
+<li>注意：这个方法不适用于null和undefined<br>由于这两个类型的数据中没有方法，所以调用toString()时会报错        </li>
+<li>方式二（强制类型转换）：</li>
+<li>调用String()函数</li>
+<li>例子：<br><code>var a = 123;
+a = String(a);</code></li>
+<li><p>原理：对于Number Boolean String都会调用他们的toString()方法来将其转换为字符串，<br>对于null值，直接转换为字符串”null”。对于undefined直接转换为字符串”undefined”</p>
+</li>
+<li><p>方式三（隐式的类型转换）: <strong>*</strong></p>
+</li>
+<li>为任意的数据类型 +””</li>
+<li>例子：<br><code>var a = true;
+a = a + &quot;&quot;;</code></li>
+<li>原理：和String()函数一样    </li>
+</ul>
+</li>
+<li><p>转换为Number</p>
+<ul>
+<li>方式一（强制类型转换）：</li>
+<li>调用Number()函数</li>
+<li>例子：<br><code>var s = &quot;123&quot;;
+s = Number(s);</code></li>
+<li>转换的情况：<br>1.字符串 –&gt; 数字</li>
+<li>如果字符串是一个合法的数字，则直接转换为对应的数字</li>
+<li>如果字符串是一个非法的数字，则转换为NaN</li>
+<li>如果是一个空串或纯空格的字符串，则转换为0<br>2.布尔值 –&gt; 数字</li>
+<li>true转换为1</li>
+<li>false转换为0<br>3.空值 –&gt; 数字</li>
+<li>null转换为0<br>4.未定义 –&gt; 数字</li>
+<li><p>undefined 转换为NaN</p>
+</li>
+<li><p>方式二（强制类型转换）：</p>
+</li>
+<li>调用parseInt()或parseFloat()</li>
+<li>这两个函数专门用来将一个字符串转换为数字的</li>
+<li>parseInt()</li>
+<li>可以将一个字符串中的有效的整数位提取出来，并转换为Number</li>
+<li>例子：<br><code>var a = &quot;123.456px&quot;;
+a = parseInt(a); //123</code></li>
+<li><p>如果需要可以在parseInt()中指定一个第二个参数，来指定进制    </p>
+</li>
+<li><p>parseFloat()</p>
+</li>
+<li>可以将一个字符串中的有效的小数位提取出来，并转换为Number</li>
+<li><p>例子：<br><code>var a = &quot;123.456px&quot;;
+a = parseFloat(a); //123.456</code></p>
+</li>
+<li><p>方式三（隐式的类型转换）：</p>
+</li>
+<li>使用一元的+来进行隐式的类型转换</li>
+<li><p>例子：<br><code>var a = &quot;123&quot;;
+a = +a;</code></p>
+</li>
+<li><p>原理：和Number()函数一样    </p>
+</li>
+</ul>
+</li>
+<li><p>转换为布尔值</p>
+<ul>
+<li>方式一（强制类型转换）：</li>
+<li>使用Boolean()函数</li>
+<li>例子：<pre><code>var s = &quot;false&quot;;
+s = Boolean(s); //true
+</code></pre></li>
+<li>转换的情况<br>字符串 –&gt; 布尔</li>
+<li><p>除了空串其余全是true</p>
+<p>数值 –&gt; 布尔</p>
+</li>
+<li><p>除了0和NaN其余的全是true</p>
+<p>null、undefined —&gt; 布尔</p>
+</li>
+<li><p>都是false</p>
+<p>对象 —&gt; 布尔</p>
+</li>
+<li><p>都是true</p>
+</li>
+<li><p>方式二（隐式类型转换）：    </p>
+</li>
+<li>为任意的数据类型做两次非运算，即可将其转换为布尔值</li>
+<li>例子：<br><code>var a = &quot;hello&quot;;
+a = !!a; //true</code></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>运算符</p>
+<ul>
+<li>运算符也称为操作符</li>
+<li>通过运算符可以对一个或多个值进行运算或操作</li>
+<li>typeof运算符</li>
+<li>用来检查一个变量的数据类型</li>
+<li>语法：typeof 变量</li>
+<li>它会返回一个用于描述类型的字符串作为结果</li>
+</ul>
+</li>
+<li><p>算数运算符</p>
+<pre><code>+    对两个值进行加法运算并返回结果
+-      对两个值进行减法运算并返回结果
+*    对两个值进行乘法运算并返回结果
+/    对两个值进行除法运算并返回结果
+%    对两个值进行取余运算并返回结果
+</code></pre></li>
+<li><p>除了加法以外，对非Number类型的值进行运算时，都会先转换为Number然后在做运算。</p>
+</li>
+<li>而做加法运算时，如果是两个字符串进行相加，则会做拼串操作，将两个字符连接为一个字符串。</li>
+<li><p>任何值和字符串做加法，都会先转换为字符串，然后再拼串</p>
+</li>
+<li><p>一元运算符</p>
+<ul>
+<li>一元运算符只需要一个操作数</li>
+<li>一元的<strong>+</strong></li>
+<li>就是正号，不会对值产生任何影响，但是可以将一个非数字转换为数字</li>
+<li><p>例子：<br><code>var a = true;
+a = +a;</code></p>
+</li>
+<li><p>一元的<strong>-</strong></p>
+</li>
+<li>就是负号，可以对一个数字进行符号位取反</li>
+<li><p>例子：<br><code>var a = 10;
+a = -a;</code></p>
+<pre><code>- 自增
+    - 自增可以使变量在原值的基础上自增1
+    - 自增使用 ++
+    - 自增可以使用 前++（++a）后++(a++)
+    - 无论是++a 还是 a++都会立即使原变量自增1
+        不同的是++a和a++的值是不同的，
+            ++a的值是变量的新值（自增后的值）
+            a++的值是变量的原值（自增前的值）
+
+- 自减    
+    - 自减可以使变量在原值的基础上自减1
+    - 自减使用 --
+    - 自减可以使用 前--（--a）后--(a--)
+    - 无论是--a 还是 a--都会立即使原变量自减1
+        不同的是--a和a--的值是不同的，
+            --a的值是变量的新值（自减后的值）
+            a--的值是变量的原值（自减前的值）
+</code></pre></li>
+</ul>
+</li>
+</ul>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/JS基础/" rel="tag"><i class="fas fa-tags"></i>JS基础</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/01/javascript学习-1/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="Wang Li">
@@ -230,7 +473,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">21</a></div>
+      <div><a href="/archives/">22</a></div>
     </div>
     
     

@@ -82,7 +82,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>javascript学习(11) | 前端学习 - 前端修行之路-无与为乐者</title>
+    <title>Js学习课程 | 前端学习 - 前端修行之路-无与为乐者</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -124,7 +124,7 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/10/javascript学习-11/">
+      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/11/Js学习课程/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="Wang Li">
        <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
@@ -135,21 +135,13 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">javascript学习(11)</h1>
+      <h1 class="post-title" itemprop="name headline">Js学习课程</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-10T23:55:15+08:00">2018-10-10 23:55:15</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T22:47:32+08:00">2018-10-11 22:47:32</time></span>
         </span>
         
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Javascript/" itemprop="url" rel="index"><span itemprop="name">Javascript</span></a></span>
-        </span>
         
         
         
@@ -157,21 +149,33 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <p>DOM对CSS的操作<br>读取和修改内联样式<br>使用style属性来操作元素的内联样式<br>读取内联样式：<br>语法：<code>元素.style.样式名</code><br>例子：<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">元素.style.width</span><br><span class="line">元素.style.height</span><br></pre></td></tr></table></figure></p>
-<p>注意：如果样式名中带有-，则需要将样式名修改为驼峰命名法<br>将<strong>-</strong>去掉，然后-后的字母改大写<br>比如：<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background-color --&gt; backgroundColor</span><br><span class="line">border-width ---&gt; borderWidth</span><br></pre></td></tr></table></figure></p>
-<p>修改内联样式：<br>语法：<code>元素.style.样式名 = 样式值</code><br>通过style修改的样式都是内联样式，由于内联样式的优先级比较高，<br> 所以我们通过JS来修改的样式，往往会立即生效，<br> 但是如果样式中设置了!important，则内联样式将不会生效。</p>
-<p>读取元素的当前样式<br>正常浏览器<br>使用getComputedStyle()<br>这个方法是window对象的方法，可以返回一个对象，这个对象中保存着当前元素生效样式<br>参数：<br>1.要获取样式的元素<br>2.可以传递一个伪元素，一般传null<br>例子：<br>获取元素的宽度<br>getComputedStyle(box , null)[“width”];<br>通过该方法读取到样式都是只读的不能修改<br>IE8<br>使用currentStyle<br>语法：<br>元素.currentStyle.样式名<br>例子：<br>box.currentStyle[“width”]<br>通过这个属性读取到的样式是只读的不能修改<br>其他的样式相关的属性<br>注意：以下样式都是只读的<br>clientHeight<br>元素的可见高度，指元素的内容区和内边距的高度<br>clientWidth<br>元素的可见宽度，指元素的内容区和内边距的宽度<br>offsetHeight<br>整个元素的高度，包括内容区、内边距、边框<br>offfsetWidth<br>整个元素的宽度，包括内容区、内边距、边框<br>offsetParent<br>当前元素的定位父元素<br>离他最近的开启了定位的祖先元素，如果所有的元素都没有开启定位，则返回body<br>offsetLeft<br>offsetTop<br>当前元素和定位父元素之间的偏移量<br>offsetLeft水平偏移量  offsetTop垂直偏移量<br>scrollHeight<br>scrollWidth<br>获取元素滚动区域的高度和宽度<br>scrollTop<br>scrollLeft<br>获取元素垂直和水平滚动条滚动的距离<br>判断滚动条是否滚动到底<br>垂直滚动条<br>scrollHeight - scrollTop = clientHeight<br>水平滚动<br>scrollWidth - scrollLeft = clientWidth<br>事件（Event）<br>事件对象<br>当响应函数被调用时，浏览器每次都会将一个事件对象作为实参传递进响应函数中，<br>这个事件对象中封装了当前事件的相关信息，比如：鼠标的坐标，键盘的按键，鼠标的按键，滚轮的方向。。<br>可以在响应函数中定义一个形参，来使用事件对象，但是在IE8以下浏览器中事件对象没有做完实参传递，而是作为window对象的属性保存<br>例子：<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">元素.事件 = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">event = event || <span class="built_in">window</span>.event;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">元素.事件 = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">e = e || event;</span><br><span class="line">&#125;; - 事件的冒泡（Bubble）</span><br></pre></td></tr></table></figure>
-<p>事件的冒泡指的是事件向上传导，当后代元素上的事件被触发时，将会导致其祖先元素上的同类事件也会触发。<br>事件的冒泡大部分情况下都是有益的，如果需要取消冒泡，则需要使用事件对象来取消<br>可以将事件对象的cancelBubble设置为true，即可取消冒泡<br>例子：<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">元素.事件 = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line"> event = event || <span class="built_in">window</span>.event;</span><br><span class="line"> event.cancelBubble = <span class="literal">true</span>;</span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure></p>
+      <h3 id="值类型"><a href="#值类型" class="headerlink" title="值类型"></a>值类型</h3><p><code>var a = 100</code><br><code>var b = a</code><br><code>a = 300</code><br><code>console.log(b)</code></p>
+<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><p><code>var a1 = {age: 20}</code><br><code>var b1 = a1</code><br><code>b1.age = 21</code><br><code>console.log(a1.age)</code></p>
+<h3 id="何时使用”-”何时使用”-”"><a href="#何时使用”-”何时使用”-”" class="headerlink" title="何时使用”==”何时使用”===”"></a>何时使用”==”何时使用”===”</h3><p><strong>==</strong>对象值是否存在，函数参数是否存在<br><code>if (a1.age == null) {
+ //a1.age===null||a1.age===undefined,简写形式
+    }</code></p>
+<h3 id="js中内置函数—数据封装类对象"><a href="#js中内置函数—数据封装类对象" class="headerlink" title="js中内置函数—数据封装类对象"></a>js中内置函数—数据封装类对象</h3><ol>
+<li>Object  对象</li>
+<li>Array   数组</li>
+<li>Boolean  布尔</li>
+<li>Number   数值</li>
+<li>String   字符串</li>
+<li>Function  函数</li>
+<li>Date      时间</li>
+<li>RegExp    正则</li>
+<li>Error     错误</li>
+</ol>
+<h3 id="Js变量按照存储方式区分为那些类型，其特点"><a href="#Js变量按照存储方式区分为那些类型，其特点" class="headerlink" title="Js变量按照存储方式区分为那些类型，其特点"></a>Js变量按照存储方式区分为那些类型，其特点</h3><p>值类型<br><code>var a = 100</code><br><code>var b = a</code><br><code>a = 300</code><br><code>console.log(b)</code> //100<br>引用类型<br><code>var a1 = {age: 20}</code><br><code>var b1 = a1</code><br><code>b1.age = 21</code><br><code>console.log(a1.age)</code> //21</p>
+<h3 id="理解JSON"><a href="#理解JSON" class="headerlink" title="理解JSON"></a>理解JSON</h3><p>JSON 只不过是一个JS对象,数据格式<br>JSON 常用API</p>
+<blockquote>
+<p>JSON.stringify({a:10,b:20})</p>
+</blockquote>
+<blockquote>
+<p>JSON.parse(‘{“a”:10,”b”:20}’)</p>
+</blockquote>
 
     </main>
     <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/JS基础/" rel="tag"><i class="fas fa-tags"></i>JS基础</a>
-        
-      </div>
       
     </footer>
   </article>
@@ -203,12 +207,10 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2018/10/10/javascript学习-10/" rel="next" title="javascript学习(10)"><i class="fas fa-angle-left"></i><span class="nav-title">javascript学习(10)</span></a>
+      <a href="/2018/10/11/javascript-继承/" rel="next" title="javascript 继承"><i class="fas fa-angle-left"></i><span class="nav-title">javascript 继承</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
-      
-      <a href="/2018/10/11/CSS学习/" rel="prev" title="CSS学习"><span class="nav-title">CSS学习</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -235,7 +237,7 @@
       "client_secret": "",
       "no_comment": "这个页面还没有评论，现在就去评论吧！",
       "go_to_comment": "去评论",
-      "issue_title": "javascript学习(11)",
+      "issue_title": "Js学习课程",
       "btn_class": "button",
       "comments_target": "#comment-thread"
     });
@@ -324,6 +326,12 @@
     
     
     
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#值类型"><span class="toc-text">值类型</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#引用类型"><span class="toc-text">引用类型</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#何时使用”-”何时使用”-”"><span class="toc-text">何时使用”==”何时使用”===”</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#js中内置函数—数据封装类对象"><span class="toc-text">js中内置函数—数据封装类对象</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Js变量按照存储方式区分为那些类型，其特点"><span class="toc-text">Js变量按照存储方式区分为那些类型，其特点</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#理解JSON"><span class="toc-text">理解JSON</span></a></li></ol></div>
+    </div>
     
     
     
