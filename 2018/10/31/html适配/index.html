@@ -82,7 +82,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>归档 | 前端学习 - 前端修行之路-无与为乐者</title>
+    <title>html适配 | 前端学习 - 前端修行之路-无与为乐者</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -120,162 +120,138 @@
         <div class="main-container">
           <div class="content">
             
-<div id="archive" class="archive page">
-  <h1 class="page-title">归档</h1>
-  <h2 class="page-counter">
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/31/html适配/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="Wang Li">
+       <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="前端学习">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">html适配</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-31T23:27:27+08:00">2018-10-31 23:27:27</time></span>
+        </span>
+        
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h4 id="适配解决方案"><a href="#适配解决方案" class="headerlink" title="适配解决方案"></a>适配解决方案</h4><p>描述:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt; meta name = &quot;viewport&quot;</span><br><span class="line">content = &quot;width=device-width,initial-scale=1,minimum-scale=1,</span><br><span class="line">maximum-scale=1,user-scalable=no&quot; / &gt;</span><br></pre></td></tr></table></figure></p>
+<p>说明:<br>(1)移动适配,对页面加此标签,此标签能够不按照默认加载<br>(2)必要内容<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">width=device-width 设置页面视口大小和设备尺寸相同大小</span><br><span class="line">user-scalable=no 设置用户不可对页面进行大小缩放设置</span><br><span class="line">initial-scale=1 设置页面加载倍率为1倍</span><br></pre></td></tr></table></figure></p>
+<p>(3) 可选内容<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">minimum-scale=1 设置页面最小缩小倍率1.0</span><br><span class="line">maximum-scale=1 设置页面最大放大倍率1.0</span><br></pre></td></tr></table></figure></p>
+<p>补充<br>这个标签在页面中并不是所有移动端都能生效,,几乎所有的移动端都不生效<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">document.querySelector(&apos;div&apos;).onclick = function() &#123;</span><br><span class="line">console.log(document.documentElement.clientWidth);//视口宽度</span><br><span class="line">console.log(document.documentElement.clientHeight);//视口高度</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="rem单位"><a href="#rem单位" class="headerlink" title="rem单位"></a>rem单位</h4><p>1、rem是字体的多少倍<br>语法:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.documentElement.style.fontSize=(</span><br><span class="line">document.documentElement.clientWidth/750)*100+&quot;px&quot;;</span><br></pre></td></tr></table></figure></p>
+<p>那么在750px大小设备当中1rem=100px;<br>在375px大小的设备中 1rem=50px;<br>2、为什么标准单位按照750px计算？<br>UI设计稿标准是750px来设计的</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/移动端适配/" rel="tag"><i class="fas fa-tags"></i>移动端适配</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
     
-    你已经写了 23 篇文章！
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.jpg" alt="微信支付"/>
+      <span>微信支付</span>
+    </div>
     
-  </h2>
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.jpg" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
   
   
-  
-  
-  <h2 class="page-title">2018</h1>
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-DOM增删查改系列之删除/" itemprop="url">javascript DOM增删查改系列之删除</a>
-      </h1>
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
       
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T00:48:08+08:00">10-11</time>
-      </span>
+      <a href="/2018/10/11/Js学习课程/" rel="next" title="Js学习课程"><i class="fas fa-angle-left"></i><span class="nav-title">Js学习课程</span></a>
       
-    </header>
-  </article>
-  
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/CSS学习/" itemprop="url">CSS学习</a>
-      </h1>
+    </div>
+    <div class="page-nav-prev page-nav-item">
       
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T00:00:24+08:00">10-11</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/10/javascript学习-11/" itemprop="url">javascript学习(11)</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-10T23:55:15+08:00">10-10</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/10/javascript学习-10/" itemprop="url">javascript学习(10)</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-10T23:49:01+08:00">10-10</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/10/javascript学习-9/" itemprop="url">javascript学习(9)</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-10T23:48:53+08:00">10-10</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/10/javascript学习-8/" itemprop="url">javascript学习(8)</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-10T23:48:45+08:00">10-10</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/10/javascript学习-7/" itemprop="url">javascript学习(7)</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-10T23:48:38+08:00">10-10</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/10/javascript学习-6/" itemprop="url">javascript学习(6)</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-10T23:48:29+08:00">10-10</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/10/javascript学习-5/" itemprop="url">javascript学习(5)</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-10T23:48:22+08:00">10-10</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/10/javascript学习-4/" itemprop="url">javascript学习(4)</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-10T23:48:13+08:00">10-10</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2018/"><i class="fas fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2018/page/3/">3</a><a class="extend next" rel="next" href="/archives/2018/page/3/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
+    </div>
   </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div class="commentjs" id="comment-thread"></div>
+  <link rel="stylesheet" href="/css/commentjs.css">
+  <script defer type="text/javascript" src="/js/marked.min.js"></script>
+  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script defer type="text/javascript" src="/js/commentjs.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    getComments({
+      "type": "",
+      "user": "",
+      "repo": "",
+      "client_id": "",
+      "client_secret": "",
+      "no_comment": "这个页面还没有评论，现在就去评论吧！",
+      "go_to_comment": "去评论",
+      "issue_title": "html适配",
+      "btn_class": "button",
+      "comments_target": "#comment-thread"
+    });
+    marked.setOptions({
+      "highlight": function (code, lang) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    function mark() {
+      var markdowns = document.getElementsByClassName("markdown");
+      for (var i = 0; i < markdowns.length; ++i){
+        if (markdowns[i].innerHTML) {
+          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+        }
+      }
+    }
+    window.addEventListener("DOMContentLoaded", mark, false);
+    window.addEventListener("load", mark, false);
+  });
+  </script>
+  
+  
+</div>
+
+
+
   
 </div>
 
@@ -334,6 +310,17 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#适配解决方案"><span class="toc-text">适配解决方案</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#rem单位"><span class="toc-text">rem单位</span></a></li></ol></div>
+    </div>
+    
     
     
     <hr>

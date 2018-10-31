@@ -125,6 +125,59 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/11/javascript-DOM增删查改系列之删除/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Wang Li">
+        <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="前端学习">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-DOM增删查改系列之删除/" itemprop="url">javascript DOM增删查改系列之删除</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T00:48:08+08:00">2018-10-11 00:48:08</time></span>
+        </span>
+        
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>突然发现，与javaScriptDom的查找方法对比一下，对DOM的删除的方法还真是少的可怜啊！我找来找去好像就只有针对DOM接点的element.removeChild(elementNode)方法和element.replaceChild(newNode,oldNode)。而针对document对象没有用于删除dom节点的方法。</p>
+<p>自己的理解：为什么document对象没有删除dom节点的方法呢？因为document对象包含了一个HTML文档的主要结构，也就是所有的HTML文档都拥有的结构，从文档最开始的到、再到。如果对document对象创建删除节点的方法很可能会对该文档造成破坏性的影响。例如注释掉一个HTML文档的head节点用于模拟删除掉head节点，在浏览器中预览会发现诸如乱码问题的一系列问题。</p>
+<p>接下来说element.removeChild(elementNode)方法。应该很容易理解，element是一个DOM节点，参数是他的一个子节点。具体的例子：</p>
+<p>var element = document.body;</p>
+<p>element.removeChild(element.childNodes[0]);</p>
+<p>接下来说element.replaceChild(newNode,oldNode)。一直对这种方法感到很头疼，TMD记不住参数的顺序啊！！！。就当新的节点很重要，要放在前面好了。。然后是具体的例子：</p>
+<p>var newNode = document.createElement(“div”);//该方法存在于该系列的增加篇中</p>
+<p>var body = document.body;</p>
+<p>body.replaceChild(newNode,body.childNodes[0]);</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/DOM/" rel="tag"><i class="fas fa-tags"></i>DOM</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/11/CSS学习/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="Wang Li">
@@ -793,85 +846,6 @@
     </footer>
   </article>
   
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/10/javascript学习-3/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="Wang Li">
-        <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="前端学习">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/10/javascript学习-3/" itemprop="url">javascript学习(3)</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-10T23:40:50+08:00">2018-10-10 23:40:50</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Javascript/" itemprop="url" rel="index"><span itemprop="name">Javascript</span></a></span>
-        </span>
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <h5 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h5><h6 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h6><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!</span><br></pre></td></tr></table></figure>
-<p> 非运算可以对一个布尔值进行取反，true变false false边true<br> 当对非布尔值使用!时，会先将其转换为布尔值然后再取反<br> 我们可以利用!来将其他的数据类型转换为布尔值<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;&amp;</span><br></pre></td></tr></table></figure></p>
-<p> &amp;&amp;可以对符号两侧的值进行与运算<br> 只有两端的值都为true时，才会返回true。只要有一个false就会返回false。<br> 与是一个短路的与，如果第一个值是false，则不再检查第二个值<br> 对于非布尔值，它会将其转换为布尔值然后做运算，并返回原值<br> 规则：<br> 1.如果第一个值为false，则返回第一个值<br> 2.如果第一个值为true，则返回第二个值<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">||</span><br></pre></td></tr></table></figure></p>
-<p> ||可以对符号两侧的值进行或运算<br> 只有两端都是false时，才会返回false。只要有一个true，就会返回true。<br> 或是一个短路的或，如果第一个值是true，则不再检查第二个值<br> 对于非布尔值，它会将其转换为布尔值然后做运算，并返回原值<br> 规则：<br> 1.如果第一个值为true，则返回第一个值<br> 2.如果第一个值为false，则返回第二个值</p>
-<h6 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h6><p><code>=</code><br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">可以将符号右侧的值赋值给左侧变量</span><br></pre></td></tr></table></figure></p>
-<p><code>+=</code><br> <figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a += <span class="number">5</span> 相当于 a = a+<span class="number">5</span></span><br><span class="line"> <span class="keyword">var</span> str = <span class="string">"hello"</span>;  str += <span class="string">"world"</span>;</span><br></pre></td></tr></table></figure></p>
-<p><code>-=</code><br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a -= <span class="number">5</span>  相当于 a = a<span class="number">-5</span></span><br></pre></td></tr></table></figure></p>
-<p><code>*=</code><br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a *= <span class="number">5</span> 相当于 a = a*<span class="number">5</span></span><br></pre></td></tr></table></figure></p>
-<p><code>/=</code><br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a /= <span class="number">5</span> 相当于 a = a/<span class="number">5</span></span><br></pre></td></tr></table></figure></p>
-<p><code>%=</code><br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a %= <span class="number">5</span> 相当于 a = a%<span class="number">5</span></span><br></pre></td></tr></table></figure></p>
-<h6 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h6><p> 关系运算符用来比较两个值之间的大小关系的<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;</span><br><span class="line">&gt;=</span><br><span class="line">&lt;</span><br><span class="line">&lt;=</span><br></pre></td></tr></table></figure></p>
-<p> 关系运算符的规则和数学中一致，用来比较两个值之间的关系，<br> 如果关系成立则返回true，关系不成立则返回false。<br> 如果比较的两个值是非数值，会将其转换为Number然后再比较。<br> 如果比较的两个值都是字符串，此时会比较字符串的Unicode编码，而不会转换为Number。</p>
-<h6 id="相等运算符"><a href="#相等运算符" class="headerlink" title="相等运算符"></a>相等运算符</h6><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">==</span><br></pre></td></tr></table></figure>
-<p>相等，判断左右两个值是否相等，如果相等返回true，如果不等返回false<br>相等会自动对两个值进行类型转换，如果对不同的类型进行比较，会将其转换为相同的类型然后再比较，<br>转换后相等它也会返回true<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!=</span><br></pre></td></tr></table></figure></p>
-<p>不等，判断左右两个值是否不等，如果不等则返回true，如果相等则返回false<br>不等也会做自动的类型转换。<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">===</span><br></pre></td></tr></table></figure></p>
-<p> 全等，判断左右两个值是否全等，它和相等类似，只不过它不会进行自动的类型转换，<br> 如果两个值的类型不同，则直接返回false<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!==</span><br></pre></td></tr></table></figure></p>
-<p> 不全等，和不等类似，但是它不会进行自动的类型转换，如果两个值的类型不同，它会直接返回true<br> 特殊的值：<br> null和undefined<br> 由于undefined衍生自null，所以null == undefined 会返回true。<br> 但是 null === undefined 会返回false。<br> NaN<br> NaN不与任何值相等，报告它自身 NaN == NaN //false<br> 判断一个值是否是NaN<br> 使用isNaN()函数</p>
-<h6 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h6><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">?:</span><br><span class="line">语法：条件表达式?语句<span class="number">1</span>:语句<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
-<p> 执行流程：<br> 先对条件表达式求值判断，<br> 如果判断结果为true，则执行语句1，并返回执行结果<br> 如果判断结果为false，则执行语句2，并返回执行结果</p>
-<p> 优先级：<br> 和数学中一样，JS中的运算符也是具有优先级的，<br> 比如 先乘除 后加减 先与 后或<br> 具体的优先级可以参考优先级的表格，在表格中越靠上的优先级越高，<br> 优先级越高的越优先计算，优先级相同的，从左往右计算。<br> 优先级不需要记忆，如果越到拿不准的，使用()来改变优先级。</p>
-<h6 id="流程控制语句"><a href="#流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h6><p> 程序都是自上向下的顺序执行的，<br> 通过流程控制语句可以改变程序执行的顺序，或者反复的执行某一段的程序。<br> 分类：<br> 1.条件判断语句<br> 2.条件分支语句<br> 3.循环语句</p>
-<h6 id="条件判断语句"><a href="#条件判断语句" class="headerlink" title="条件判断语句"></a>条件判断语句</h6><p>条件判断语句也称为if语句<br>语法一：<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">语句...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p> 执行流程：<br> if语句执行时，会先对条件表达式进行求值判断，<br> 如果值为true，则执行if后的语句<br> 如果值为false，则不执行</p>
-<p> 语法二：<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">语句...</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">语句...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p> 执行流程：<br> if…else语句执行时，会对条件表达式进行求值判断，<br> 如果值为true，则执行if后的语句<br> 如果值为false，则执行else后的语句</p>
-<p> 语法三：<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">语句...</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">语句...</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">语句...</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">语句...</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">语句...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p> 执行流程<br> if…else if…else语句执行时，会自上至下依次对条件表达式进行求值判断，<br> 如果判断结果为true，则执行当前if后的语句，执行完成后语句结束。<br> 如果判断结果为false，则继续向下判断，直到找到为true的为止。<br> 如果所有的条件表达式都是false，则执行else后的语句</p>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/JS基础/" rel="tag"><i class="fas fa-tags"></i>JS基础</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
@@ -915,7 +889,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">22</a></div>
+      <div><a href="/archives/">23</a></div>
     </div>
     
     
@@ -933,7 +907,7 @@
     
     <div class="tags-count">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">9</a></div>
+      <div><a href="/tags/">12</a></div>
     </div>
     
   </div>

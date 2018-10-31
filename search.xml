@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title>html适配</title>
+      <link href="/2018/10/31/html%E9%80%82%E9%85%8D/"/>
+      <url>/2018/10/31/html%E9%80%82%E9%85%8D/</url>
+      
+        <content type="html"><![CDATA[<h4 id="适配解决方案"><a href="#适配解决方案" class="headerlink" title="适配解决方案"></a>适配解决方案</h4><p>描述:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt; meta name = &quot;viewport&quot;</span><br><span class="line">content = &quot;width=device-width,initial-scale=1,minimum-scale=1,</span><br><span class="line">maximum-scale=1,user-scalable=no&quot; / &gt;</span><br></pre></td></tr></table></figure></p><p>说明:<br>(1)移动适配,对页面加此标签,此标签能够不按照默认加载<br>(2)必要内容<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">width=device-width 设置页面视口大小和设备尺寸相同大小</span><br><span class="line">user-scalable=no 设置用户不可对页面进行大小缩放设置</span><br><span class="line">initial-scale=1 设置页面加载倍率为1倍</span><br></pre></td></tr></table></figure></p><p>(3) 可选内容<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">minimum-scale=1 设置页面最小缩小倍率1.0</span><br><span class="line">maximum-scale=1 设置页面最大放大倍率1.0</span><br></pre></td></tr></table></figure></p><p>补充<br>这个标签在页面中并不是所有移动端都能生效,,几乎所有的移动端都不生效<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">document.querySelector(&apos;div&apos;).onclick = function() &#123;</span><br><span class="line">console.log(document.documentElement.clientWidth);//视口宽度</span><br><span class="line">console.log(document.documentElement.clientHeight);//视口高度</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h4 id="rem单位"><a href="#rem单位" class="headerlink" title="rem单位"></a>rem单位</h4><p>1、rem是字体的多少倍<br>语法:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.documentElement.style.fontSize=(</span><br><span class="line">document.documentElement.clientWidth/750)*100+&quot;px&quot;;</span><br></pre></td></tr></table></figure></p><p>那么在750px大小设备当中1rem=100px;<br>在375px大小的设备中 1rem=50px;<br>2、为什么标准单位按照750px计算？<br>UI设计稿标准是750px来设计的</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 移动端适配 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Js学习课程</title>
       <link href="/2018/10/11/Js%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B/"/>
       <url>/2018/10/11/Js%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B/</url>

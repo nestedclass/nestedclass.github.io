@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.inlm.cn/"/>
-  <updated>2018-10-11T15:22:31.332Z</updated>
+  <updated>2018-10-31T16:43:48.054Z</updated>
   <id>http://www.inlm.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>html适配</title>
+    <link href="http://www.inlm.cn/2018/10/31/html%E9%80%82%E9%85%8D/"/>
+    <id>http://www.inlm.cn/2018/10/31/html适配/</id>
+    <published>2018-10-31T15:27:27.000Z</published>
+    <updated>2018-10-31T16:43:48.054Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="适配解决方案"><a href="#适配解决方案" class="headerlink" title="适配解决方案"></a>适配解决方案</h4><p>描述:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt; meta name = &quot;viewport&quot;</span><br><span class="line">content = &quot;width=device-width,initial-scale=1,minimum-scale=1,</span><br><span class="line">maximum-scale=1,user-scalable=no&quot; / &gt;</span><br></pre></td></tr></table></figure></p><p>说明:<br>(1)移动适配,对页面加此标签,此标签能够不按照默认加载<br>(2)必要内容<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">width=device-width 设置页面视口大小和设备尺寸相同大小</span><br><span class="line">user-scalable=no 设置用户不可对页面进行大小缩放设置</span><br><span class="line">initial-scale=1 设置页面加载倍率为1倍</span><br></pre></td></tr></table></figure></p><p>(3) 可选内容<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">minimum-scale=1 设置页面最小缩小倍率1.0</span><br><span class="line">maximum-scale=1 设置页面最大放大倍率1.0</span><br></pre></td></tr></table></figure></p><p>补充<br>这个标签在页面中并不是所有移动端都能生效,,几乎所有的移动端都不生效<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">document.querySelector(&apos;div&apos;).onclick = function() &#123;</span><br><span class="line">console.log(document.documentElement.clientWidth);//视口宽度</span><br><span class="line">console.log(document.documentElement.clientHeight);//视口高度</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h4 id="rem单位"><a href="#rem单位" class="headerlink" title="rem单位"></a>rem单位</h4><p>1、rem是字体的多少倍<br>语法:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.documentElement.style.fontSize=(</span><br><span class="line">document.documentElement.clientWidth/750)*100+&quot;px&quot;;</span><br></pre></td></tr></table></figure></p><p>那么在750px大小设备当中1rem=100px;<br>在375px大小的设备中 1rem=50px;<br>2、为什么标准单位按照750px计算？<br>UI设计稿标准是750px来设计的</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;适配解决方案&quot;&gt;&lt;a href=&quot;#适配解决方案&quot; class=&quot;headerlink&quot; title=&quot;适配解决方案&quot;&gt;&lt;/a&gt;适配解决方案&lt;/h4&gt;&lt;p&gt;描述:&lt;br&gt;&lt;figure class=&quot;hljs highlight plain&quot;&gt;&lt;table&gt;&lt;tr
+      
+    
+    </summary>
+    
+    
+      <category term="移动端适配" scheme="http://www.inlm.cn/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D/"/>
+    
+  </entry>
   
   <entry>
     <title>Js学习课程</title>
@@ -470,31 +493,6 @@
       
       
         &lt;h6 id=&quot;条件分支语句&quot;&gt;&lt;a href=&quot;#条件分支语句&quot; class=&quot;headerlink&quot; title=&quot;条件分支语句&quot;&gt;&lt;/a&gt;条件分支语句&lt;/h6&gt;&lt;figure class=&quot;hljs highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td 
-      
-    
-    </summary>
-    
-      <category term="Javascript" scheme="http://www.inlm.cn/categories/Javascript/"/>
-    
-    
-      <category term="JS基础" scheme="http://www.inlm.cn/tags/JS%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>javascript学习(3)</title>
-    <link href="http://www.inlm.cn/2018/10/10/javascript%E5%AD%A6%E4%B9%A0-3/"/>
-    <id>http://www.inlm.cn/2018/10/10/javascript学习-3/</id>
-    <published>2018-10-10T15:40:50.000Z</published>
-    <updated>2018-10-10T17:00:28.699Z</updated>
-    
-    <content type="html"><![CDATA[<h5 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h5><h6 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h6><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!</span><br></pre></td></tr></table></figure><p> 非运算可以对一个布尔值进行取反，true变false false边true<br> 当对非布尔值使用!时，会先将其转换为布尔值然后再取反<br> 我们可以利用!来将其他的数据类型转换为布尔值<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;&amp;</span><br></pre></td></tr></table></figure></p><p> &amp;&amp;可以对符号两侧的值进行与运算<br> 只有两端的值都为true时，才会返回true。只要有一个false就会返回false。<br> 与是一个短路的与，如果第一个值是false，则不再检查第二个值<br> 对于非布尔值，它会将其转换为布尔值然后做运算，并返回原值<br> 规则：<br> 1.如果第一个值为false，则返回第一个值<br> 2.如果第一个值为true，则返回第二个值<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">||</span><br></pre></td></tr></table></figure></p><p> ||可以对符号两侧的值进行或运算<br> 只有两端都是false时，才会返回false。只要有一个true，就会返回true。<br> 或是一个短路的或，如果第一个值是true，则不再检查第二个值<br> 对于非布尔值，它会将其转换为布尔值然后做运算，并返回原值<br> 规则：<br> 1.如果第一个值为true，则返回第一个值<br> 2.如果第一个值为false，则返回第二个值</p><h6 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h6><p><code>=</code><br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">可以将符号右侧的值赋值给左侧变量</span><br></pre></td></tr></table></figure></p><p><code>+=</code><br> <figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a += <span class="number">5</span> 相当于 a = a+<span class="number">5</span></span><br><span class="line"> <span class="keyword">var</span> str = <span class="string">"hello"</span>;  str += <span class="string">"world"</span>;</span><br></pre></td></tr></table></figure></p><p><code>-=</code><br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a -= <span class="number">5</span>  相当于 a = a<span class="number">-5</span></span><br></pre></td></tr></table></figure></p><p><code>*=</code><br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a *= <span class="number">5</span> 相当于 a = a*<span class="number">5</span></span><br></pre></td></tr></table></figure></p><p><code>/=</code><br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a /= <span class="number">5</span> 相当于 a = a/<span class="number">5</span></span><br></pre></td></tr></table></figure></p><p><code>%=</code><br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a %= <span class="number">5</span> 相当于 a = a%<span class="number">5</span></span><br></pre></td></tr></table></figure></p><h6 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h6><p> 关系运算符用来比较两个值之间的大小关系的<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;</span><br><span class="line">&gt;=</span><br><span class="line">&lt;</span><br><span class="line">&lt;=</span><br></pre></td></tr></table></figure></p><p> 关系运算符的规则和数学中一致，用来比较两个值之间的关系，<br> 如果关系成立则返回true，关系不成立则返回false。<br> 如果比较的两个值是非数值，会将其转换为Number然后再比较。<br> 如果比较的两个值都是字符串，此时会比较字符串的Unicode编码，而不会转换为Number。</p><h6 id="相等运算符"><a href="#相等运算符" class="headerlink" title="相等运算符"></a>相等运算符</h6><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">==</span><br></pre></td></tr></table></figure><p>相等，判断左右两个值是否相等，如果相等返回true，如果不等返回false<br>相等会自动对两个值进行类型转换，如果对不同的类型进行比较，会将其转换为相同的类型然后再比较，<br>转换后相等它也会返回true<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!=</span><br></pre></td></tr></table></figure></p><p>不等，判断左右两个值是否不等，如果不等则返回true，如果相等则返回false<br>不等也会做自动的类型转换。<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">===</span><br></pre></td></tr></table></figure></p><p> 全等，判断左右两个值是否全等，它和相等类似，只不过它不会进行自动的类型转换，<br> 如果两个值的类型不同，则直接返回false<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!==</span><br></pre></td></tr></table></figure></p><p> 不全等，和不等类似，但是它不会进行自动的类型转换，如果两个值的类型不同，它会直接返回true<br> 特殊的值：<br> null和undefined<br> 由于undefined衍生自null，所以null == undefined 会返回true。<br> 但是 null === undefined 会返回false。<br> NaN<br> NaN不与任何值相等，报告它自身 NaN == NaN //false<br> 判断一个值是否是NaN<br> 使用isNaN()函数</p><h6 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h6><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">?:</span><br><span class="line">语法：条件表达式?语句<span class="number">1</span>:语句<span class="number">2</span>;</span><br></pre></td></tr></table></figure><p> 执行流程：<br> 先对条件表达式求值判断，<br> 如果判断结果为true，则执行语句1，并返回执行结果<br> 如果判断结果为false，则执行语句2，并返回执行结果</p><p> 优先级：<br> 和数学中一样，JS中的运算符也是具有优先级的，<br> 比如 先乘除 后加减 先与 后或<br> 具体的优先级可以参考优先级的表格，在表格中越靠上的优先级越高，<br> 优先级越高的越优先计算，优先级相同的，从左往右计算。<br> 优先级不需要记忆，如果越到拿不准的，使用()来改变优先级。</p><h6 id="流程控制语句"><a href="#流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h6><p> 程序都是自上向下的顺序执行的，<br> 通过流程控制语句可以改变程序执行的顺序，或者反复的执行某一段的程序。<br> 分类：<br> 1.条件判断语句<br> 2.条件分支语句<br> 3.循环语句</p><h6 id="条件判断语句"><a href="#条件判断语句" class="headerlink" title="条件判断语句"></a>条件判断语句</h6><p>条件判断语句也称为if语句<br>语法一：<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">语句...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p> 执行流程：<br> if语句执行时，会先对条件表达式进行求值判断，<br> 如果值为true，则执行if后的语句<br> 如果值为false，则不执行</p><p> 语法二：<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">语句...</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">语句...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p> 执行流程：<br> if…else语句执行时，会对条件表达式进行求值判断，<br> 如果值为true，则执行if后的语句<br> 如果值为false，则执行else后的语句</p><p> 语法三：<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">语句...</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">语句...</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">语句...</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">语句...</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">语句...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p> 执行流程<br> if…else if…else语句执行时，会自上至下依次对条件表达式进行求值判断，<br> 如果判断结果为true，则执行当前if后的语句，执行完成后语句结束。<br> 如果判断结果为false，则继续向下判断，直到找到为true的为止。<br> 如果所有的条件表达式都是false，则执行else后的语句</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h5 id=&quot;运算符&quot;&gt;&lt;a href=&quot;#运算符&quot; class=&quot;headerlink&quot; title=&quot;运算符&quot;&gt;&lt;/a&gt;运算符&lt;/h5&gt;&lt;h6 id=&quot;逻辑运算符&quot;&gt;&lt;a href=&quot;#逻辑运算符&quot; class=&quot;headerlink&quot; title=&quot;逻辑运算符&quot;&gt;&lt;/a&gt;
       
     
     </summary>

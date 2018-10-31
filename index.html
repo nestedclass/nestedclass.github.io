@@ -125,6 +125,56 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/31/html适配/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Wang Li">
+        <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="前端学习">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/10/31/html适配/" itemprop="url">html适配</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-31T23:27:27+08:00">2018-10-31 23:27:27</time></span>
+        </span>
+        
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h4 id="适配解决方案"><a href="#适配解决方案" class="headerlink" title="适配解决方案"></a>适配解决方案</h4><p>描述:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt; meta name = &quot;viewport&quot;</span><br><span class="line">content = &quot;width=device-width,initial-scale=1,minimum-scale=1,</span><br><span class="line">maximum-scale=1,user-scalable=no&quot; / &gt;</span><br></pre></td></tr></table></figure></p>
+<p>说明:<br>(1)移动适配,对页面加此标签,此标签能够不按照默认加载<br>(2)必要内容<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">width=device-width 设置页面视口大小和设备尺寸相同大小</span><br><span class="line">user-scalable=no 设置用户不可对页面进行大小缩放设置</span><br><span class="line">initial-scale=1 设置页面加载倍率为1倍</span><br></pre></td></tr></table></figure></p>
+<p>(3) 可选内容<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">minimum-scale=1 设置页面最小缩小倍率1.0</span><br><span class="line">maximum-scale=1 设置页面最大放大倍率1.0</span><br></pre></td></tr></table></figure></p>
+<p>补充<br>这个标签在页面中并不是所有移动端都能生效,,几乎所有的移动端都不生效<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">document.querySelector(&apos;div&apos;).onclick = function() &#123;</span><br><span class="line">console.log(document.documentElement.clientWidth);//视口宽度</span><br><span class="line">console.log(document.documentElement.clientHeight);//视口高度</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="rem单位"><a href="#rem单位" class="headerlink" title="rem单位"></a>rem单位</h4><p>1、rem是字体的多少倍<br>语法:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.documentElement.style.fontSize=(</span><br><span class="line">document.documentElement.clientWidth/750)*100+&quot;px&quot;;</span><br></pre></td></tr></table></figure></p>
+<p>那么在750px大小设备当中1rem=100px;<br>在375px大小的设备中 1rem=50px;<br>2、为什么标准单位按照750px计算？<br>UI设计稿标准是750px来设计的</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/移动端适配/" rel="tag"><i class="fas fa-tags"></i>移动端适配</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/11/Js学习课程/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="Wang Li">
@@ -747,59 +797,6 @@
     </footer>
   </article>
   
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.inlm.cn/2018/10/11/javascript-DOM增删查改系列之删除/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="Wang Li">
-        <meta itemprop="description" content="前端开发、HTML5、CSS3、Javascript的前端开发独立博客。">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="前端学习">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/10/11/javascript-DOM增删查改系列之删除/" itemprop="url">javascript DOM增删查改系列之删除</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-11T00:48:08+08:00">2018-10-11 00:48:08</time></span>
-        </span>
-        
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p>突然发现，与javaScriptDom的查找方法对比一下，对DOM的删除的方法还真是少的可怜啊！我找来找去好像就只有针对DOM接点的element.removeChild(elementNode)方法和element.replaceChild(newNode,oldNode)。而针对document对象没有用于删除dom节点的方法。</p>
-<p>自己的理解：为什么document对象没有删除dom节点的方法呢？因为document对象包含了一个HTML文档的主要结构，也就是所有的HTML文档都拥有的结构，从文档最开始的到、再到。如果对document对象创建删除节点的方法很可能会对该文档造成破坏性的影响。例如注释掉一个HTML文档的head节点用于模拟删除掉head节点，在浏览器中预览会发现诸如乱码问题的一系列问题。</p>
-<p>接下来说element.removeChild(elementNode)方法。应该很容易理解，element是一个DOM节点，参数是他的一个子节点。具体的例子：</p>
-<p>var element = document.body;</p>
-<p>element.removeChild(element.childNodes[0]);</p>
-<p>接下来说element.replaceChild(newNode,oldNode)。一直对这种方法感到很头疼，TMD记不住参数的顺序啊！！！。就当新的节点很重要，要放在前面好了。。然后是具体的例子：</p>
-<p>var newNode = document.createElement(“div”);//该方法存在于该系列的增加篇中</p>
-<p>var body = document.body;</p>
-<p>body.replaceChild(newNode,body.childNodes[0]);</p>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/DOM/" rel="tag"><i class="fas fa-tags"></i>DOM</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
@@ -843,7 +840,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">22</a></div>
+      <div><a href="/archives/">23</a></div>
     </div>
     
     
@@ -861,7 +858,7 @@
     
     <div class="tags-count">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">9</a></div>
+      <div><a href="/tags/">12</a></div>
     </div>
     
   </div>
